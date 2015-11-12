@@ -1,0 +1,20 @@
+{
+  "name": "resources",
+  "version": "0.0.0",
+  "authors": [
+    "yulu zhang <yulu@70kft.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/resources/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "~3.0.3",
+    "jquery": "~2.1.4"
+  }
+}

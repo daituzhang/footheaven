@@ -1,0 +1,48 @@
+@mixin center() {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+  @include transform(translate3d(-50%, -50%, 0));
+}
+
+@mixin center-x() {
+  left: 50%;
+  position: absolute;
+  @include transform(translate(-50%,0));
+  @include transform(translate3d(-50%, 0, 0));
+}
+
+@mixin overlap() {
+  position: absolute;
+  left: 0;
+  top: 0;   
+}
+
+@mixin center-y() {
+  position: absolute;
+  top: 50%;
+  @include transform(translate(0, -50%));
+  @include transform(translate3d(0, -50%, 0));
+}
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+      background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}

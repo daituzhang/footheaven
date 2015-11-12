@@ -1,0 +1,32 @@
+{% if query is defined %}
+{% else %}
+  {% set query = "" %}
+{% endif %}
+  <div class="col-1-of-4">
+    <aside>      
+      <h4>Categories</h4>
+      <ul>
+        {% nav category in craft.categories.group('instaBlogCategories') %}
+          <li>
+            <a href="{{ category.url }}">{{ category.title }}</a>
+            {% ifchildren %}
+              <ul>
+                {% children %}
+              </ul>
+            {% endifchildren %}
+          </li>
+        {% endnav %}
+      </ul>
+      
+      <h4>Tags</h4>
+      {% set allEntries = craft.entries.section('instaBlog').limit(null) %}
+      {% set tags = craft.tags.group('instaBlogTags').relatedTo(allEntries) %}
+      <ul>
+      {% for tag in tags %}
+        <li><a href="/blog/tag/{{ tag.name|split(' ')|join('-')|lower }}">{{ tag.name }}</a>
+      {% endfor %}          
+      </ul>
+
+
+    </aside>
+  </div>

@@ -1,0 +1,21 @@
+//colors
+$white : #FFFFFF;
+$black : #000000;
+$yellow: #fff6c9;
+$orange: #FF9666;
+$gray: #1a4f44;
+$gray-light: #cccccc;
+$blue: #3fa2e0;
+$green : #c8e8c7; 
+$green-dark: #1a4f44;
+$green-medium: #499e8d;
+
+
+$btn-green: darken($green-medium,5%);
+$btn-green-hover: $green-medium;
+
+$font-green: $green-dark;
+$font-green-light: rgba($font-green,0.6);
+
+$padding-gap: rem(80);
+

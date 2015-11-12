@@ -1,0 +1,74 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ # This template defines your site’s global layout. It can be
+ # “extended” by other templates to fill in the gaps.
+ #
+ # See Twig’s Template Inheritance documentation for more details:
+ # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+ #}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<link rel="home" href="{{ siteUrl }}" />
+	{% block meta %}
+	{% endblock %}
+
+	<!-- build:css(app) styles/vendor.css -->
+		<link rel="stylesheet" href="/resources/bower_components/normalize-css/normalize.css" />
+	<!-- endbuild -->
+
+	<!-- build:css(app) /resources/css/style.css -->
+	    <link rel="stylesheet" href="/resources/css/site.css">
+	<!-- endbuild -->
+	<script src="https://use.typekit.net/wuz8jhr.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+</head>
+
+<body class="{% block bodyClass %}home{% endblock %}">
+	<div id="container">
+		<header id="site-header" class="top-nav-layer" data-height="0" data-0-top="hithg;" data-emit-events>
+      <div class="wrap">
+        <a href="#" class="hamburger mobile-only icon-hamburger">MENU</a>
+ 				{% block nav %}
+          <nav id="site-nav" role="navigation">
+            <ul>
+              <li class="mobile-only"><a href="/">Home</a></li>
+							<li><a href="#the-book">The Book</a></li>
+							<li><a href="#the-author">The Author</a></li>
+							<li><a href="#connect">Connect</a></li>
+							<li><a href="/blog">Blog</a></li>
+            </ul>
+          </nav>
+  			{% endblock %}
+      </div>
+    </header>
+
+		<main id="content" role="main">
+			{% block breadcrumbs %}{% endblock %}
+			{% block content %}
+				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+			{% endblock %}
+		</main>
+
+		<footer id="footer">
+			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>
+		</footer>
+	</div>
+
+	<!-- build:bower(app) /resources/js/vendor.js -->
+	    <script src="/resources/bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js(app) /resources/js/app.min.js -->
+	    <script src="/resources/js/app.js"></script>
+	<!-- endbuild -->
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends craft.instaBlog.settings.layout|length ? craft.instaBlog.settings.layout : 'blog/_instablog-layout' %}
+
+{% set tags = craft.request.segment(3) %}
+{% set searchValue = craft.request.segment(3) %}  
+
+{% block content %}
+<section id="instablog">
+<div class="wrap">
+  <header>
+    <h4>Tag</h4>
+    {% if craft.request.segment(3) == '' %}
+    <h1>Browse tags below:</h1>
+    </header>
+    <div class="grid">
+        <div class="col-3-of-4 blog-left">
+    {% set instaTags = craft.tags.group('instaBlogTags') %}
+
+    <article>
+      <ul>
+      {% for tag in instaTags %}
+        <li><a href="/blog/tag/{{ tag.name|split(' ')|join('-')|lower }}">{{ tag.name }}</a>
+      {% endfor %}          
+      </ul>
+    </article>
+
+  {% else %}
+
+    {% paginate craft.entries.search(tags).section('instaBlog').limit(10).order('dateCreated') as entries %}  
+      <h1>{{ searchValue | title }}</h1>    
+      </header>
+      <div class="grid">
+          <div class="col-3-of-4 blog-left">
+      {% if entries|length %}
+    
+        {% include 'blog/_entries.twig' %}
+
+      {% else %}
+        {% include 'blog/_not-found.twig' with {'type': 'tag'} %}
+      {% endif %}
+
+    {% endpaginate %}
+  {% endif %}
+  </div>
+  {% include 'blog/_aside.twig' %}
+  </div>
+  </div>
+</section>
+{% endblock %}

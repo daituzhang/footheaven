@@ -1,0 +1,386 @@
+$black: #000;
+$white: #fff;
+$red: #ee2e30;
+$blue: #00abe5;
+$font-gray: #979797;
+$font-grayer: #a09e9f;
+$font-dark: #3e3b3b;
+$bg-black: #150f0f;
+$bg-gray: #f6f6f6;
+$tablet: 1023px;
+
+html,
+body {
+  @include transition(all 0 .5s ease);
+  font-family: 'proxima-nova',sans-serif;
+  font-size: $px-base;
+  line-height: 1.5;
+  font-weight: 300;
+  &.lock {
+    overflow: hidden;
+  }
+}
+
+* {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+@include scrollbars(.5em, lighten($red, 5%), lighten($blue, 20%));
+
+h1 {
+  font-size: rem(60);
+  line-height: rem(78);
+  margin-bottom: rem(5);
+  font-weight: 700;
+}
+h2 {
+  font-size: rem(14);
+  line-height: rem(20);
+  margin-bottom: rem(26);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+h3 {
+  font-size: rem(24);
+  line-height: rem(26);
+  margin-bottom: rem(40);
+  font-weight: 500;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+p a,
+li a {
+  text-decoration: underline;
+}
+i,
+em {
+  font-style: italic;
+} 
+img {
+  max-width: 100%;
+}
+.wrap {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 $padding-gap;
+}
+.left {
+  text-align: left;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.white {
+  background: $white;
+}
+.green {
+  background: $green;
+}
+.orange {
+  background: $orange;
+}
+.yellow {
+  background: $yellow;
+}
+
+main {
+  margin-top: rem(130);
+}
+.img-row {
+  @media screen and (min-width: $mobile + 1px) {
+    display: table !important;
+  }
+}
+.img-container {
+  background-size: cover;
+  height: 502px;
+  height: 33.3vw;
+  vertical-align: bottom;
+  width: 33.3%;
+  .des {
+    @include transition(all .5s ease);
+    color: $white;
+    opacity: 0;
+    padding: 20px;
+  }
+  @media screen and (min-width: $mobile + 1px) {
+    cursor: url(../img/plus.svg) 100 -100, pointer;
+    display: table-cell !important;
+    overflow: hidden;
+    .hover {
+      @include transition(all 1s ease);
+      background: $font-dark;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    &:hover {
+      .hover {
+        opacity: .8;
+      }
+      .des {
+        opacity: 1;
+      }
+    }
+  }
+  @media screen and (max-width: $mobile) {
+    height: 100vw;
+  }
+}
+
+
+.full-width-img {
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.lazy-show {
+  @include transform(scale(.95));
+  @include transition(all .5s ease);
+  opacity: 0;
+  &.show {
+    @include transform(scale(1));
+    opacity: 1;
+  }
+}
+
+.btn {
+  @include transition(all .5s ease);
+  background: transparent;
+  border: 2px solid $btn-green;
+  color: $btn-green;
+  display: block;
+  font-size: rem(14);
+  padding: rem(15) rem(20);
+  text-align: center;
+  width: rem(263);
+  z-index: 2;
+  text-transform: uppercase;
+  font-weight: 700;
+  &:after {
+    @include transition(all .5s ease);
+    background: $btn-green-hover;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+    z-index: -1;;
+  }
+  &:hover {
+    color: $white;
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+
+.subfooter {
+  background: $bg-black;
+  color: $font-grayer;
+  padding: 160px 10%;
+  text-align: center;
+  h2 {
+    color: $white;
+    margin-bottom: 15px;
+  }
+  .btn {
+    margin: 30px auto 130px;
+  }
+  ul {
+    margin-bottom: 30px;
+  }
+  .download-row {
+    margin: 0 auto;
+    .btn {
+      max-width: 200px;
+    }
+  }
+  .credit-logo {
+    display: block;
+  }
+  #credit-kft img {
+    width: 350px;
+  }
+  #credit-ramsey img {
+    height: 110px;
+    width: 155px;
+  }
+  #credit-okratron img {
+    height: 112px;
+    margin-right: 20px;
+    width: 160px;
+  }
+  .credit-logo-row {
+    margin: 30px auto;
+    padding: 30px 0;
+    width: 350px;
+    &:before,
+    &:after {
+      background: $white;
+      content: '';
+      height: 5px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+    &:before {
+      margin-bottom: 30px;
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+      margin-top: 30px;
+    }
+    .credit-logo {
+      display: inline-block;
+    }
+  }
+  .subfooter-container {
+    @include transition(all 1s ease);
+    margin: 0 auto;
+    margin-top: 100px;
+    max-width: 750px;
+    opacity: .5;
+    &.show {
+      margin-top: 0;
+      opacity: 1;
+    }
+  }
+  a {
+    color: $white;
+  }
+  @media screen and (max-width: $mobile) {
+    #credit-kft img {
+      width: 280px;
+    }
+    #credit-ramsey img {
+      height: 85px;
+      width: 120px;
+    }
+    #credit-okratron img {
+      height: 84px;
+      width: 120px;
+    }
+    .credit-logo-row {
+      width: 280px;
+    }
+    .download-row .col-1-of-2:first-child .btn{
+      margin-bottom: 65px;
+    }
+  }
+}
+
+footer {
+  background: $bg-gray;
+  color: $font-grayer;
+  padding: 53px 10%;
+  text-align: center;
+  a {
+    color: $font-grayer;
+  }
+  .footer-container {
+    margin: 0 auto;
+    max-width: 577px;
+  }
+  .icon-70kft-logo {
+    margin-right: 20px;
+  }
+  @media screen and (max-width: $mobile) {
+    span {
+      display: block;
+    }
+  }
+}
+
+#light-box {
+  @include transition(all .3s ease);
+  background: rgba($black, .8);
+  color: $white;
+  height: 100%;
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  .arrow {
+    cursor: pointer;
+    font-size: 50px;
+    height: 100%;
+    position: absolute;
+    width: 10%;
+    z-index: 7;
+    &:before {
+      @include center;
+    }
+  }
+  .left-arrow {
+    left: 0;
+  }
+  .right-arrow {
+    right: 0;
+  }
+  .light-box-container {
+    cursor: url(../img/minus.svg), auto;
+    height: 100%;
+    margin: 0 auto;
+    width: 80%;
+  }
+  #light-box-img {
+    @include center;
+    height: auto;
+    margin: 0 auto;
+    max-width: 760px;
+    width: 100%;
+  }
+  #light-box-shadow {
+    @include transition(all .3s ease);
+    opacity: 0;
+    z-index: 8;
+    &.show {
+      opacity: 1;
+    }
+  }
+  &.show {
+    opacity: 1;
+    z-index: 6;
+  }
+}
+
+@media screen and (min-width: $mobile + 1px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .desktop-only {
+    display: none !important;
+  }
+  .app-body-layer {
+    @include transition(all .5s 0 ease);
+    height: 100%;
+    z-index: 0;
+
+    -webkit-overflow-scrolling: touch;
+  }
+}

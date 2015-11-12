@@ -1,0 +1,11 @@
+#ignore sass-cache#
+.sass-cache/*
+*.scssc
+public/css/sass/.sass-cache
+.vagrant
+.DS_Store
+design-assets
+public/cache/*
+
+
+node_modules/*
