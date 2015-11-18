@@ -1,0 +1,3 @@
+[submodule "craft/plugins/FormBuilder-Craft-CMS"]
+	path = craft/plugins/FormBuilder-Craft-CMS
+	url = https://github.com/roundhouse/FormBuilder-Craft-CMS.git
