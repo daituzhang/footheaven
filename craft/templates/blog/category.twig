@@ -3,7 +3,7 @@
 <section id="instablog">
  <div class="wrap">
   <header>
-    <h4>{{ type }}</h4>
+    <h4>Category</h4>
     {% if craft.request.segment(3) == '' %}     
     <h1>Browse categories below:</h1>
     </header><!-- /header -->
@@ -25,7 +25,7 @@
           </article>
 
      {% else %}
-        <h1>{{ type.slug|title }}</h1>    
+        <h1>{{ category.slug|title }}</h1>    
         </header><!-- /header -->
         <div class="grid">
           <div class="col-3-of-4 blog-left">
@@ -41,7 +41,7 @@
               {% include 'blog/_entries.twig' %}
 
             {% else %}
-              {% include 'blog/_not-found.twig' with {'type': type} %}
+              {% include 'blog/_not-found.twig' with {'type': 'category'} %}
             {% endif %}
 
             {% endpaginate %}

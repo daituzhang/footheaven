@@ -4,11 +4,14 @@ $black : #000000;
 $yellow: #fff6c9;
 $orange: #FF9666;
 $gray: #1a4f44;
+$gray-lighter: #eaeaea;
 $gray-light: #cccccc;
+$gray-dark: #777777;
 $blue: #3fa2e0;
 $green : #c8e8c7; 
 $green-dark: #1a4f44;
 $green-medium: #499e8d;
+$red: #ff0000;
 
 
 $btn-green: darken($green-medium,5%);
@@ -17,5 +20,14 @@ $btn-green-hover: $green-medium;
 $font-green: $green-dark;
 $font-green-light: rgba($font-green,0.6);
 
+$blue-facebook:#3b5998;
+$blue-twitter: #4099ff;
+
+$blog-black: #272f32;
+$blog-search-gray: #888888;
+$blog-footer-gray: #f8f8f8;
+
 $padding-gap: rem(80);
 
+$breakpoint-medium: 770px !default;
+$breakpoint-small: 480px !default;

@@ -11,6 +11,7 @@
   z-index: 5;
   .wrap {
     padding: rem(40) $padding-gap;
+    @include transition(all .3s ease);
   }
   #site-nav {
     padding: rem(10) 0;
@@ -67,9 +68,12 @@
     display: inline-block;
     margin-right: rem(40)
   }
-  &.hide {
-    @include transform(translate(0, -100%));
-    @include transform(translate3d(0, -100%, 0));
+  &.short {
+    height: rem(45);
+    .wrap {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   }
 }
 @media screen and (max-width: 940px) and (min-width: $mobile) {
@@ -108,7 +112,8 @@
         &:after {
           color: $font-green;
         }
-        &:hover {
+        &:hover,
+        &.active {
           background: darken($font-green-light, 10%);
           a {
             color: rgba(239, 207, 129, .9);

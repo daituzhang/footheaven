@@ -2,43 +2,30 @@
 {% set entries = craft.entries.section('instaBlog') %}
 {% set total = entries|length %}
 {% block content %}
-<section id="instablog">
+<section id="instablog" class="blog-index">
   <div class="wrap">
     <header>
       <h1>{{ blog.blogHeader }}</h1>
-      <h3>{{ blog.blogDescription }}</h3>  
+      <h3><i>{{ blog.blogDescription }}</i></h3>  
     </header>
     <hr>
     {% if total %}
-      {% set colNum = (total/3)|round(0, 'ceil') %}
-      {{ colNum }}
-      <div class="grid">
+    <div class="blog-list">
       {% for blog in entries %}
-      {{loop.index}}{{ loop.index is divisible by(colNum) }}
-        {% if loop.index is divisible by(colNum) or loop.first %}
-          <div class="col-1-of-3">
-        {% endif %}
-        <article itemtype="http://schema.org/Article">
-          <header>
-            {% if blog.instaBlogImage|length %}
-              <img src="{{ blog.instaBlogImage|first.url }}" alt="blog.instaBlogImage|first">
-            {% endif %}
-            <h4><a href="/{{ blog.uri }}" itemprop="name">{{ blog.title }}</a></h4>
-          </header>
-          <div>
-            <span itemprop="author">{{ blog.author.fullName }}</span>
-          </div>
-          <div itemprop="articleBody">
-            <span itemprop="datePublished">{{ blog.postDate.format('F d, Y') }}</span> - {{ blog.instaBlogBody|striptags|truncate(240) }}
-            <a class="more" href="/{{ blog.uri }}">Read More</a>
-          </div>
-          <footer>
-            {% include 'blog/_share.twig' %}
-          </footer>
-        </article>
-        {% if (loop.index+1) is divisible by(colNum) or loop.last %}
-          </div>
-        {% endif %}
+        <div class="article-container">
+          <article itemtype="http://schema.org/Article">
+            <header>
+              {% if blog.instaBlogImage|length %}
+                <img src="{{ blog.instaBlogImage|first.url }}" alt="blog.instaBlogImage|first">
+              {% endif %}
+              <h4><a href="/{{ blog.uri }}" itemprop="name">{{ blog.title }}</a></h4>
+            </header>
+            <div itemprop="articleBody">
+              <h5 itemprop="datePublished">{{ blog.postDate.format('F d, Y') }}</h5> 
+              <p>{{ blog.instaBlogBody|striptags|truncate(240) }}</p>
+            </div>
+          </article>
+        </div>
       {% endfor %}
       </div>
     {% endif %}

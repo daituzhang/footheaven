@@ -6,6 +6,33 @@ form {
   textarea {
     display: block;
     width: 100%;
+    margin-bottom: rem(20);
+  }
+  label {
+    font-weight: 500;
+    font-size: rem(18);
+    margin-bottom: rem(15);
+    &.required:after {
+      content: '*';
+      color: $red;
+      margin-left: rem(3);
+    }
+  }
+  input,
+  textarea {
+    padding: rem(10);
+    box-shadow: none;
+    border: none;
+    color: $gray-dark;
+  }
+  p {
+    margin-bottom: rem(20);
+    font-size: rem(12);    
+    &:before {
+      content: '*';
+      color: $red;
+      margin-right: rem(3);
+    }
   }
 }
 .formError {

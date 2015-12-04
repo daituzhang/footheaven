@@ -46,3 +46,19 @@
     scrollbar-track-color: $background-color;
   }
 }
+
+@mixin hoverBlue() {
+  @include transition(all .3s ease);
+  &:hover {
+    color: $blue;
+    border-bottom: 1px solid $blue;
+  }
+}
+
+@mixin hoverLine() {
+  @include transition(all .3s ease);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

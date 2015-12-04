@@ -8,13 +8,14 @@ $font-dark: #3e3b3b;
 $bg-black: #150f0f;
 $bg-gray: #f6f6f6;
 $tablet: 1023px;
+$mobile: $toast-breakpoint-small;
 
 html,
 body {
   @include transition(all 0 .5s ease);
   font-family: 'proxima-nova',sans-serif;
   font-size: $px-base;
-  line-height: 1.5;
+  line-height: 1.8;
   font-weight: 300;
   &.lock {
     overflow: hidden;
@@ -26,7 +27,18 @@ body {
        box-sizing: border-box;
 }
 
-@include scrollbars(.5em, lighten($red, 5%), lighten($blue, 20%));
+
+body {
+  opacity: 0;
+  &.lock {
+    overflow: hidden;
+  }
+  &.loaded {
+    @include transition(all .3s ease);
+    opacity: 1;
+  }
+}
+@include scrollbars(.5em, $green-dark, $green);
 
 h1 {
   font-size: rem(60);
@@ -91,6 +103,8 @@ img {
 
 main {
   margin-top: rem(130);
+  @include transition(all .3s ease);
+  min-height: calc(100vh - 173px);
 }
 .img-row {
   @media screen and (min-width: $mobile + 1px) {
@@ -184,6 +198,16 @@ main {
     color: $white;
     &:after {
       width: 100%;
+    }
+  }
+  &.white {
+    color: $white;
+    border-color: $white;
+    &:after {
+      background: $white;
+    }
+    &:hover {
+      color: $orange;
     }
   }
 }
@@ -281,28 +305,6 @@ main {
     }
     .download-row .col-1-of-2:first-child .btn{
       margin-bottom: 65px;
-    }
-  }
-}
-
-footer {
-  background: $bg-gray;
-  color: $font-grayer;
-  padding: 53px 10%;
-  text-align: center;
-  a {
-    color: $font-grayer;
-  }
-  .footer-container {
-    margin: 0 auto;
-    max-width: 577px;
-  }
-  .icon-70kft-logo {
-    margin-right: 20px;
-  }
-  @media screen and (max-width: $mobile) {
-    span {
-      display: block;
     }
   }
 }

@@ -3,14 +3,36 @@
     text-decoration: none;
     color: $blue;
   }
+  h1 {
+    font-size: rem(60);
+    color: $blog-black;
+    margin-bottom: 0;
+  }
   h3 {
     color: $gray-light;
+    font-size: rem(18);
+  }
+  h4 {
+    font-size: rem(28);
+    font-weight: 600;
+    color: $blog-black;
+  }
+  h5 {
+    color: $gray-light;
+    font-size: rem(14);
+    font-weight: 500;
+  }
+  hr {
+    border: 1px solid $gray-lighter;
+    background-color: $gray-lighter;
+    margin-bottom: rem(37);
   }
   #site-nav {
     float: left;
   }
   .blog-search {
     float: right;
+    color: $blog-search-gray;
     label {
       display: none;
     }
@@ -29,14 +51,15 @@
       font-size: rem(14);
       font-weight: 300;
       @include input-placeholder {
-        color: $gray;
+        color: $blog-search-gray;
         font-style: italic;
       }
     }
   }
   .crumbs {
     color: $gray-light;
-    padding: rem(58) 0 rem(38);
+    font-size: rem(16);
+    padding: rem(53) 0 rem(22);
     font-weight: 500;
     li {
       display: inline-block;
@@ -46,20 +69,114 @@
       }
     }
   }
-  .blog-left {
-    padding-right: 8%;
+  header {
+    h3 {
+      margin-bottom: rem(17);
+    }
   }
-  h4 {
-    font-size: rem(24);
-    font-weight: 500;
+  .blog-list {
+    @include column-count(3);
+    h4 a{
+      color: $blog-black;
+      @include hoverBlue;
+    }
+    h5 {
+      text-transform: uppercase;
+      margin-bottom: rem(22);
+    }
+    .article-container {
+      font-size: rem(16);
+      color: $gray-dark;
+      display: table;
+      width: 100%;
+      @include break-inside(avoid);
+      margin-bottom: rem(50);
+    }
+    article {
+      display: block;
+    }
+    @media (max-width: $breakpoint-medium) {
+      @include column-count(2);
+    }
+        @media (max-width: $breakpoint-small) {
+      @include column-count(1);
+    }
   }
-  h5 {
-    color: $gray-light;
-    font-size: rem(14);
-    font-weight: 500;
+  .blog-entry {
+    font-size: rem(16);
+    article {
+      header {
+        margin-bottom: rem(50);
+        a {
+          color: $gray-light;
+          @include hoverBlue();
+        }
+        h3 span:not(:first-child):before {
+          content: " \B7 ";
+          font-size: rem(20);
+          margin: 0 rem(15);
+        }
+      }
+    }
+    .blog-right {
+      img,
+      .tags,
+      .shares {
+        margin-bottom: rem(54);
+      }
+      h5 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin-bottom: rem(20);
+      }
+      .shares a {
+        margin-right: rem(10);
+        color: $gray-light;
+        @include hoverBlue();
+      }
+    }
+  }
+  .type {
+    h1 {
+      margin: 0 0 rem(45);
+    }
+    h5 {
+      text-transform: uppercase;
+      margin-bottom: rem(20);
+    }
+    hr {
+      margin-bottom: rem(30);
+    }
+    nav span:only-child {
+      display: none;
+    }
+    .blog-left {
+      padding-right: rem(100);
+      h4 a{
+        color: $blog-black;
+        @include hoverBlue;
+      }
+    }
+    aside {
+      a {
+        text-decoration: underline;
+      }
+      ul {
+        margin-bottom : rem(35);
+      }
+    }
   }
   article.brief {
     border-top: 1px solid $gray-light;
     padding: rem(28) 0;
+    &:first-child  {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+  footer {
+    background: $blog-footer-gray;
+    border-top: 1px solid $gray-light;
   }
 }

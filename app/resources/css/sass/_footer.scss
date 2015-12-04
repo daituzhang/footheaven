@@ -1,0 +1,28 @@
+footer {
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  background: white;
+  .col.footer-left {
+    color: $gray-dark;
+    text-align: left;
+    font-size: rem(12);
+    padding: rem(15) rem(20);
+  }
+  .col.footer-right {
+    text-align: right;
+    [class^="icon-"] {
+      color: white;
+      font-size: rem(14);
+      padding: rem(13);
+      display: inline-block;
+    }
+    .icon-facebook {
+      background: $blue-facebook;
+      margin-right: rem(-5);
+    }
+    .icon-twitter {
+      background: $blue-twitter;
+    }
+  }
+}
