@@ -1,21 +1,21 @@
 footer {
-  width: 100%;
+  background: white;
   overflow: hidden;
   padding: 0;
-  background: white;
+  width: 100%;
   .col.footer-left {
     color: $gray-dark;
-    text-align: left;
     font-size: rem(12);
     padding: rem(15) rem(20);
+    text-align: left;
   }
   .col.footer-right {
     text-align: right;
-    [class^="icon-"] {
+    [class^='icon-'] {
       color: white;
+      display: inline-block;
       font-size: rem(14);
       padding: rem(13);
-      display: inline-block;
     }
     .icon-facebook {
       background: $blue-facebook;

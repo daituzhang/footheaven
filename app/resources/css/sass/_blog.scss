@@ -1,199 +1,12 @@
 .blog {
-  a {
-    text-decoration: none;
-    color: $blue;
-  }
-  h1 {
-    font-size: rem(60);
-    color: $blog-black;
-    margin-bottom: 0;
-  }
-  h3 {
-    color: $gray-light;
-    font-size: rem(18);
-  }
-  h4 {
-    font-size: rem(28);
-    font-weight: 600;
-    color: $blog-black;
-  }
-  h5 {
-    color: $gray-light;
-    font-size: rem(14);
-    font-weight: 500;
-  }
-  hr {
-    border: 1px solid $gray-lighter;
-    background-color: $gray-lighter;
-    margin-bottom: rem(37);
-  }
-  #site-nav {
-    float: left;
-  }
-  .blog-search {
-    float: right;
-    color: $blog-search-gray;
-    margin-top: rem(3);
-    @include transition(all .3s ease);
-    label {
-      display: none;
-    }
-    button {
-      @include overlap;
-      border: none;
-      background: transparent;
-      font-size: rem(20);
-      padding: 0 rem(5);
-      :before {
-        @include transform( scaleX(-1));
-      }
-    }
-    input {
-      padding: rem(10) rem(37);
-      font-size: rem(14);
-      font-weight: 300;
-      margin-bottom: 0;
-      @include input-placeholder {
-        color: $blog-search-gray;
-        font-style: italic;
-      }
-    }
-  }
-  .crumbs {
-    color: $gray-light;
-    font-size: rem(16);
-    padding: rem(53) 0 rem(22);
-    font-weight: 500;
-    li {
-      display: inline-block;
-      &:not(:first-child):before {
-        content:"//";
-        margin-right: rem(5);
-      }
-    }
-  }
-  #instablog {
-    padding-top: rem(60);
-  }
-  header {
-    h3 {
-      margin-bottom: rem(17);
-    }
-  }
-  .blog-list {
-    @include column-count(3);
-    h4 a{
-      color: $blog-black;
-      @include hoverBlue;
-    }
-    h5 {
-      text-transform: uppercase;
-      margin-bottom: rem(22);
-    }
-    .article-container {
-      font-size: rem(16);
-      color: $gray-dark;
-      display: table;
-      width: 100%;
-      @include break-inside(avoid);
-      margin-bottom: rem(50);
-    }
-    article {
-      display: block;
-    }
-    @include tablet-only {
-      @include column-count(2);
-    }
-    @include mobile-only {
-      @include column-count(1);
-    }
-  }
-  .blog-entry {
-    font-size: rem(16);
-    article {
-      header {
-        margin-bottom: rem(50);
-        a {
-          color: $gray-light;
-          @include hoverBlue();
-        }
-        h3 span:not(:first-child):before {
-          content: " \B7 ";
-          font-size: rem(20);
-          margin: 0 rem(15);
-        }
-      }
-    }
-    .blog-right {
-      img,
-      .tags,
-      .shares {
-        margin-bottom: rem(54);
-      }
-
-      h5 {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 700;
-        margin-bottom: rem(20);
-      }
-      .shares a {
-        margin-right: rem(10);
-        color: $gray-light;
-        @include hoverBlue();
-      }
-    }
-  }
-  .type {
-    h1 {
-      margin: 0 0 rem(45);
-    }
-    h5 {
-      text-transform: uppercase;
-      margin-bottom: rem(20);
-    }
-    hr {
-      margin-bottom: rem(30);
-    }
-    nav span:only-child {
-      display: none;
-    }
-    .blog-left {
-      padding-right: rem(100);
-      h4 a{
-        color: $blog-black;
-        @include hoverBlue;
-      }
-    }
-    aside {
-      a {
-        text-decoration: underline;
-      }
-      ul {
-        margin-bottom : rem(35);
-      }
-    }
-  }
-  article.brief {
-    border-top: 1px solid $gray-light;
-    padding: rem(28) 0;
-    &:first-child  {
-      border-top: none;
-      padding-top: 0;
-    }
-  }
-  footer {
-    background: $blog-footer-gray;
-    border-top: 1px solid $gray-light;
-  }
   @include mobile-only {
     .wrap {
       padding-left: $padding-mobile-gap;
       padding-right: $padding-mobile-gap;
     }
     .blog-search {
-      margin: rem(10) -9.5% 0;
       float: none;
+      margin: rem(10) -9.5% 0;
       input {
         border: 5px solid $green;
       }
@@ -210,5 +23,191 @@
     .blog-entry .blog-right img {
       margin: rem(20) auto rem(54);
     }
+  }
+  a {
+    color: $blue;
+    text-decoration: none;
+  }
+  h1 {
+    color: $blog-black;
+    font-size: rem(60);
+    margin-bottom: 0;
+  }
+  h3 {
+    color: $gray-light;
+    font-size: rem(18);
+  }
+  h4 {
+    color: $blog-black;
+    font-size: rem(28);
+    font-weight: 600;
+  }
+  h5 {
+    color: $gray-light;
+    font-size: rem(14);
+    font-weight: 500;
+  }
+  hr {
+    background-color: $gray-lighter;
+    border: 1px solid $gray-lighter;
+    margin-bottom: rem(37);
+  }
+  #site-nav {
+    float: left;
+  }
+  .blog-search {
+    color: $blog-search-gray;
+    float: right;
+    margin-top: rem(3);
+    @include transition(all .3s ease);
+    label {
+      display: none;
+    }
+    button {
+      background: transparent;
+      border: none;
+      font-size: rem(20);
+      padding: 0 rem(5);
+      @include overlap;
+      :before {
+        @include transform( scaleX(-1));
+      }
+    }
+    input {
+      font-size: rem(14);
+      font-weight: 300;
+      margin-bottom: 0;
+      padding: rem(10) rem(37);
+      @include input-placeholder {
+        color: $blog-search-gray;
+        font-style: italic;
+      }
+    }
+  }
+  .crumbs {
+    color: $gray-light;
+    font-size: rem(16);
+    font-weight: 500;
+    padding: rem(53) 0 rem(22);
+    li {
+      display: inline-block;
+      &:not(:first-child):before {
+        content: '//';
+        margin-right: rem(5);
+      }
+    }
+  }
+  #instablog {
+    padding-top: rem(60);
+  }
+  header {
+    h3 {
+      margin-bottom: rem(17);
+    }
+  }
+  .blog-list {
+    @include column-count(3);
+    @include tablet-only {
+      @include column-count(2);
+    }
+    @include mobile-only {
+      @include column-count(1);
+    }
+    h4 a {
+      color: $blog-black;
+      @include hoverBlue;
+    }
+    h5 {
+      margin-bottom: rem(22);
+      text-transform: uppercase;
+    }
+    .article-container {
+      color: $gray-dark;
+      display: table;
+      font-size: rem(16);
+      margin-bottom: rem(50);
+      width: 100%;
+      @include break-inside(avoid);
+    }
+    article {
+      display: block;
+    }
+  }
+  .blog-entry {
+    font-size: rem(16);
+    article {
+      header {
+        margin-bottom: rem(50);
+        a {
+          color: $gray-light;
+          @include hoverBlue();
+        }
+        h3 span:not(:first-child):before {
+          content: ' \B7 ';
+          font-size: rem(20);
+          margin: 0 rem(15);
+        }
+      }
+    }
+    .blog-right {
+      img,
+      .tags,
+      .shares {
+        margin-bottom: rem(54);
+      }
+      h5 {
+        font-weight: 700;
+        letter-spacing: rem(2);
+        margin-bottom: rem(20);
+        text-transform: uppercase;
+      }
+      .shares a {
+        color: $gray-light;
+        margin-right: rem(10);
+        @include hoverBlue();
+      }
+    }
+  }
+  .type {
+    h1 {
+      margin: 0 0 rem(45);
+    }
+    h5 {
+      margin-bottom: rem(20);
+      text-transform: uppercase;
+    }
+    hr {
+      margin-bottom: rem(30);
+    }
+    nav span:only-child {
+      display: none;
+    }
+    .blog-left {
+      padding-right: rem(100);
+      h4 a {
+        color: $blog-black;
+        @include hoverBlue;
+      }
+    }
+    aside {
+      a {
+        text-decoration: underline;
+      }
+      ul {
+        margin-bottom: rem(35);
+      }
+    }
+  }
+  article.brief {
+    border-top: 1px solid $gray-light;
+    padding: rem(28) 0;
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+  footer {
+    background: $blog-footer-gray;
+    border-top: 1px solid $gray-light;
   }
 }

@@ -8,11 +8,11 @@
 @import "fonts";
 @import "grid";
 @import "icons";
-@import "book/book";
 @import "form";
 @import "general";
-@import "header";
-@import "footer";
+@import "components/header";
+@import "components/footer";
 @import "home";
 @import "blog";
-@import "sections/404";
+@import "components/book";
+@import "components/404";

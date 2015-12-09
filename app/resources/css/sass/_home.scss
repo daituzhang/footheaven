@@ -1,6 +1,6 @@
 .home {
-  color: $font-green;
   background-color: $green;
+  color: $font-green;
   .btn-container {
     margin-top: rem(58);
     .btn {
@@ -18,27 +18,33 @@
   }
 }
 #example {
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  color: $gray-dark;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  opacity: 0;
-  font-size: rem(16);
-  @include transition(z-index 0s 1.5s ease,opacity 1s .8s ease);
   background: $white;
+  color: $gray-dark;
+  font-size: rem(16);
+  height: 100vh;
+  left: 0;
+  opacity: 0;
+  position: fixed;
   text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  @include transition(z-index 0s 1.5s ease,opacity 1s .8s ease);
+  @include mobile-only {
+    .close-trigger {
+      right: rem(10);
+      top: rem(10);
+    }
+  }
   h2,
   h4 {
     color: $gray-light;
-    font-size: rem(14)
+    font-size: rem(14);
   }
   h3 {
     color: darken($gray-dark, 50%);
-    font-weight: 500;
     font-size: rem(28);
+    font-weight: 500;
     margin-bottom: rem(25);
   }
   h4 {
@@ -48,14 +54,14 @@
     }
   }
   .wrap {
-    padding: rem(40) $padding-gap rem(180);
     max-width: rem(800);
+    padding: rem(40) $padding-gap rem(180);
   }
   .close-trigger {
-    position: absolute;
-    top: rem(30);
-    right: rem(50);
     color: $gray-light;
+    position: absolute;
+    right: rem(50);
+    top: rem(30);
     &:after {
       font-size: rem(20);
       vertical-align: middle;
@@ -63,28 +69,13 @@
   }
   &.open {
     opacity: 1;
-    z-index: 11;
     overflow-y: scroll;
+    z-index: 11;
     @include transition(z-index 0s ease,opacity 1s .8s ease);
-  }
-  @include mobile-only {
-    .close-trigger {
-      top: rem(10);
-      right: rem(10);
-    }
   }
 }
 #the-book {
   overflow-x: hidden;
-  .wrap {
-    padding: rem(70) $padding-gap rem(180);
-  }
-  h1 {
-    color: #333;
-  }
-  h3 {
-    margin-bottom: rem(15);
-  }
   @include tablet-only {
     .btn + .btn {
       margin-top: rem(20);
@@ -105,33 +96,32 @@
       padding-top: rem(350);
     }
     .book-right {
+      left: 15%;
       position: absolute;
       top: 0;
-      left: 15%;
     }
     .btn-container {
       padding-left: 0 !important;
     }
+  }
+  .wrap {
+    padding: rem(70) $padding-gap rem(180);
+  }
+  h1 {
+    color: #333;
+  }
+  h3 {
+    margin-bottom: rem(15);
   }
 }
 #the-author {
   background: $white;
   color: $gray-dark;
   font-size: rem(18);
-  .wrap {
-    padding: rem(96) $padding-gap;
-  }
-  img {
-    padding-left: rem(60);
-    margin-top: rem(10);
-  }
-  p {
-    margin-bottom: rem(40);
-  }
   @include tablet-mobile {
     img {
-      padding-left: 0;
       margin-top: rem(50);
+      padding-left: 0;
     }
   }
   @include mobile-only {
@@ -143,15 +133,38 @@
       padding: rem(50) $padding-mobile-gap rem(20);
     }
   }
+  .wrap {
+    padding: rem(96) $padding-gap;
+  }
+  img {
+    margin-top: rem(10);
+    padding-left: rem(60);
+  }
+  p {
+    margin-bottom: rem(40);
+  }
 }
 #events {
   color: $green-dark;
   font-size: rem(14);
+  @include tablet-only {
+    .event-date {
+      display: none;
+    }
+  }
+  @include mobile-only {
+    .event:first-child {
+      margin-bottom: rem(50);
+    }
+    .event-date {
+      display: block !important;
+    }
+  }
   h3 {
-    margin-bottom: 0;
-    text-transform: uppercase;
     font-size: rem(18);
     font-weight: 700;
+    margin-bottom: 0;
+    text-transform: uppercase;
   }
   h5 {
     font-size: rem(18);
@@ -175,10 +188,10 @@
       opacity: 1;
       z-index: 2;
       @include transition(transform .5s ease);
-      @include transform(translate3d(0,0,0)); 
+      @include transform(translate3d(0,0,0));
     }
     &.from-right:not(.active),
-    &.to-right{
+    &.to-right {
       @include transform(translate3d(100%,0,0));
     }
     &.from-left:not(.active),
@@ -186,11 +199,11 @@
       @include transform(translate3d(-100%,0,0));
     }
   }
-  [class^="arrow"]{
-    @include transition(all .5s ease);
-    opacity: 1;
-    font-size: rem(28);
+  [class^='arrow'] {
     color: $green-medium;
+    font-size: rem(28);
+    opacity: 1;
+    @include transition(all .5s ease);
     &:hover {
       color: $green-dark;
     }
@@ -207,80 +220,66 @@
   .event-date {
     border-right: solid 2px $yellow-dark;
     color: $green-dark;
-    text-align: center;
     font-size: rem(13);
+    font-weight: 500;
+    max-width: rem(80);
     padding: rem(10) 0;
     text-align: center;
+    text-align: center;
     width: 100%;
-    max-width: rem(80);
-    font-weight: 500;
   }
   .event-day {
-    line-height: 1.2em;
-    text-align: center;
     font-size: rem(30);
     letter-spacing: 3px;
+    line-height: 1.2em;
+    text-align: center;
     @include mobile-only {
       font-size: rem(20);
-    }
-  }
-  @include tablet-only {
-    .event-date {
-      display: none;
-    }
-  }
-  @include mobile-only {
-    .event:first-child {
-      margin-bottom: rem(50);
-    }
-    .event-date {
-      display: block !important;
     }
   }
 }
 #banner {
   background: $white;
-  font-size: rem(15);
   color: $gray-dark;
+  font-size: rem(15);
+  @include tablet-only {
+    .banner-left {
+    }
+    .banner-center {
+      padding-bottom: rem(50);
+      padding-top: rem(60);
+    }
+    .banner-right {
+      padding-bottom: rem(60);
+      padding-top: 0;
+    }
+  }
   .banner-left {
-    padding-top: rem(55);
     padding-bottom: rem(64);
+    padding-top: rem(55);
   }
   .banner-center {
+    padding-bottom: rem(95);
     padding-top: rem(95);
-    padding-bottom: rem(95); 
   }
   .banner-right {
     padding-top: rem(105);
   }
-  @include tablet-only {
-    .banner-left {
-
-    }
-    .banner-center {
-      padding-top: rem(60);
-      padding-bottom: rem(50);
-    }
-    .banner-right {
-      padding-top: 0;
-      padding-bottom: rem(60);
-    }
-  }
 }
 #connect {
-  font-size: rem(14);
   color: $white;
-  .wrap {
-    padding: rem(95) $padding-gap;
-  }
-  .form-container {
-    width: 50%;
-    margin: 0 auto;
-  }
+  font-size: rem(14);
   @include tablet-mobile {
     .form-container {
       width: 100%;
     }
+  }
+  .wrap {
+    padding: rem(95) $padding-gap;
+  }
+  .form-container {
+    margin: 0 auto;
+    width: 50%;
   }
 }
 #share {
@@ -289,19 +288,19 @@
   }
   h2 {
     font-size: rem(14);
-    text-align: center;
     line-height: 1;
     margin-bottom: 0;
+    text-align: center;
   }
-  [class^="icon-"] {
+  [class^='icon-'] {
     margin-right: rem(5);
   }
-} 
+}
 
 @include mobile-only {
   .home {
-    width: 100%;
     overflow: none;
+    width: 100%;
     section .wrap {
       padding: rem(50) $padding-mobile-gap !important;
     }

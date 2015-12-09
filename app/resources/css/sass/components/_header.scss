@@ -1,16 +1,16 @@
 #site-header {
-  @include transition(all .3s ease);
   background: $green;
   color: $font-green-light;
   font-size: rem(14);
   font-weight: 700;
   height: rem(85);
+  overflow: none;
   position: fixed;
+  text-align: left;
   top: 0;
   width: 100%;
   z-index: 5;
-  overflow: none;
-  text-align: left;
+  @include transition(all .3s ease);
   .wrap {
     padding: rem(20) $padding-gap;
     @include transition(all .3s ease);
@@ -19,22 +19,28 @@
     padding: rem(10) 0;
   }
   a {
-    @include transition(all .3s ease);
     color: $font-green-light;
     text-decoration: none;
     text-transform: uppercase;
+    @include transition(all .3s ease);
     &:hover,
     &.active {
       color: $font-green;
     }
   }
   .hamburger {
-    vertical-align: middle;
     display: block;
+    vertical-align: middle;
     @include transition(all .3s ease);
     &:after {
-      content:"";
+      border-radius: 5px;
+      content: '';
+      cursor: pointer;
+      display: inline-block;
+      height: rem(30);
+      margin-left: rem(10);
       vertical-align: middle;
+      width: rem(30);
       @include transition(all .3s ease);
       @include background(linear-gradient(to bottom,
       transparent 0%, transparent 15%,
@@ -45,17 +51,11 @@
       $font-green 71%, $font-green 81%,
       transparent 81%, transparent 100%),
       linear-gradient(transparent, transparent));
-      border-radius: 5px;
-      cursor: pointer;
-      display: inline-block;
-      margin-left: rem(10);
-      height: rem(30);
-      width: rem(30);
     }
-    &:hover{
+    &:hover {
       color: $font-green-light;
       &:after {
-        content: "";
+        content: '';
         @include background(linear-gradient(to bottom,
         transparent 0%, transparent 15%,
         $font-green-light 15%, $font-green-light 25%,
@@ -68,26 +68,25 @@
       }
     }
   }
-
   li {
-    @include transition(all .3s ease);
     display: inline-block;
-    margin-right: rem(40)
+    margin-right: rem(40);
+    @include transition(all .3s ease);
   }
   &.short {
+    box-shadow: 0 2px 3px rgba(0,0,0,.2);
     height: rem(50);
-    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
     .wrap {
-      padding-top: rem(3);
       padding-bottom: rem(3);
+      padding-top: rem(3);
     }
   }
 }
 @include mobile-only {
   #site-header {
-    text-align: right;
     background: $white;
     height: rem(70);
+    text-align: right;
     width: 100%;
     z-index: 10;
     .wrap {
@@ -99,9 +98,7 @@
       }
     }
     #site-nav {
-      @include transition(all .3s 0 ease);
-      @include transform(translate(100%,0));
-      @include transform(translate3d(100%,0,0));
+      background: $white;
       height: 100vh;
       overflow-x: hidden;
       overflow-y: auto;
@@ -111,19 +108,23 @@
       top: 0;
       width: 100%;
       width: 80%;
-      background: $white;
+      @include transition(all .3s 0 ease);
+      @include transform(translate(100%,0));
+      @include transform(translate3d(100%,0,0));
       li {
         display: block;
         line-height: 0;
         margin: 0 auto;
         padding: rem(30) 20px;
         text-align: left;
+        @include transition(background .3s ease);
         &:after {
           color: $font-green;
         }
         &:hover,
         &.active {
           background: $green-dark;
+          color: $green;
           a {
             color: $green;
           }
@@ -131,18 +132,19 @@
       }
     }
   }
-
   body.nav-open {
     header#site-header {
-      .hamburger{
+      .hamburger {
+        width: 0;
         @include transform(translate(-80%,0));
         @include transform(translate3d(-80%,0,0));
-        width: 0;
         span {
-          display:none;
+          display: none;
         }
         &:after {
-          content: "";
+          content: '';
+          height: 28px;
+          width: 28px;
           @include transform(rotate(-180deg));
           @include background(linear-gradient(-45deg,
           transparent 0%, transparent 45%,
@@ -152,8 +154,6 @@
           transparent 0%, transparent 45%,
           $font-green 45%, $font-green 53%,
           transparent 53%, transparent 100%));
-          height: 28px;
-          width: 28px;
         }
         &:hover:after {
           @include background(linear-gradient(-45deg,
@@ -167,10 +167,9 @@
         }
       }
       #site-nav {
+        box-shadow: 0 2px 3px rgba(0,0,0,.2);
         @include transform(translate(0,0));
         @include transform(translate3d(0,0,0));
-        box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
-
       }
     }
     .mobile-body,
