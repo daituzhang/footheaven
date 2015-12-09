@@ -10,7 +10,7 @@
         </div>
         <div itemprop="articleBody">
           <h5 itemprop="datePublished">{{ blog.postDate.format('F d, Y') }}</h5>
-          {{ blog.instaBlogBody|striptags|truncate(240) }}
+          <p>{{ blog.instaBlogBody|striptags|truncate(240) }}</p>
         </div>
       </article>
     {% endfor %}

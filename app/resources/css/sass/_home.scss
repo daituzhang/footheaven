@@ -82,6 +82,9 @@
   h1 {
     color: #333;
   }
+  h3 {
+    margin-bottom: rem(15);
+  }
   @include tablet-only {
     .btn + .btn {
       margin-top: rem(20);
@@ -92,6 +95,12 @@
   }
   @include mobile-only {
     text-align: center;
+    h1 {
+      font-size: rem(38);
+    }
+    h3 {
+      font-size: rem(24);
+    }
     .wrap > .grid {
       padding-top: rem(350);
     }
