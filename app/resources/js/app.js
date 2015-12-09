@@ -126,10 +126,18 @@ function anchorScroll() {
   });
 }
 
+function navOpen(){
+  $('.hamburger').click(function (e) {
+    e.preventDefault();
+    $('body').toggleClass('nav-open lock');
+  });
+}
+
 $(document).ready(function() {
   events();
   bookOpen();
   navRoll();
+  navOpen();
   anchorScroll();
 });
 

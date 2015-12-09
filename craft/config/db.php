@@ -22,7 +22,7 @@ return array(
         'server' => 'localhost',
         'user' => 'root',
         'password' => '',
-        'database' => 'mpv',
+        'database' => 'janet',
     ),
 
     '10.0.1.136' => array(

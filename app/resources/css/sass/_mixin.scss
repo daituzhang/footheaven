@@ -62,3 +62,49 @@
     text-decoration: underline;
   }
 }
+
+//media queries
+@mixin mobile-only {
+  @media only screen and (max-width : $mobile) {
+    @content;
+  }
+  @media only screen and (max-device-width : $mobile-device) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media only screen and (min-width : $mobile + 1) and (max-width : $tablet) {
+    @content;
+  }
+  @media only screen and (min-device-width : $mobile-device + 1) and (max-device-width : $tablet-device) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile {
+  @media only screen and (max-width : $tablet) {
+    @content;
+  }
+  @media only screen and (max-device-width : $tablet-device) {
+    @content;
+  }
+}
+
+@mixin desktop-only {
+  @media only screen and (min-width : $tablet + 1) {
+    @content;
+  }
+  @media only screen and (min-device-width : tablet-device) {
+    @content;
+  }
+}
+
+@mixin desktop-tablet {
+  @media only screen and (min-width : $mobile + 1) {
+    @content;
+  }
+  @media only screen and (min-device-width : $mobile-device + 1) {
+    @content;
+  }
+}

@@ -21,28 +21,25 @@
 {% set tabs = form.fieldLayout.getFieldLayout().getTabs() %}
 {% set pluginScripts = craft.formBuilder.pluginScripts(form) %}
 
+
 {% extends "_layout" %}
 
 {% block content %}
 <section id="example" class="green">
   <div class="wrap">
-    Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments? Reflect on God’s blessings with Finding God in the Everyday—365 daily readings to open your heart to his presence in the world he has created.
-Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments? Reflect on God’s blessings with Finding God in the Everyday—365 daily readings to open your heart to his presence in the world he has created.
-Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments? Reflect on God’s blessings with Finding God in the Everyday—365 daily readings to open your heart to his presence in the world he has created.
-Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments? Reflect on God’s blessings with Finding God in the Everyday—365 daily readings to open your heart to his presence in the world he has created.
-Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments? Reflect on God’s blessings with Finding God in the Everyday—365 daily readings to open your heart to his presence in the world he has created.
-
-<a href="" class="close-trigger">close</a>
+    <h2>{{entry.sampleHeader}}</h2>
+    {{entry.sampleCopy}}
   </div>
+  <a href="" class="close-trigger icon-close">close</a>
 </section>
 <section id="the-book" class="green">
   <div class="wrap">
-    <div class="grid grid-no-gutter">
-     <div class="book-left col col-7-of-12"> 
+    <div class="grid">
+     <div class="book-left col col-7-of-12 col-m-1-of-2"> 
         {{entry.bookCopy}}
-        <div class="btn-container">
+        <div class="btn-container desktop-mobile-only">
             {% if entry.bookCta %}
-              <a href="" class="btn">{{ entry.bookCta }}</a>
+              <a href="" class="btn mobile-top">{{ entry.bookCta }}</a>
             {% endif %}
             {% if entry.sampleCta %}
               <a href="" class="btn open-trigger">{{ entry.sampleCta }}</a>
@@ -50,47 +47,59 @@ Every day, God reveals himself through the smallest details in our lives. But ho
         </div>
       </div>
       {% if entry.bookImage|length %}
-        <div class="book-right col col-5-of-12">
-         <div class="book-open">
-          <li>
-            <figure class="book">
+        <div class="book-right col col-5-of-12 col-m-1-of-2">
+          <div class="book-open desktop-only">
+            <li>
+              <figure class="book">
+              <!-- Front -->
+                <ul class='hardcover_front'>
+                  <li>
+                    {% if entry.bookImage|length %}
+                      <img src="{{entry.bookImage|first.url}}" alt="{entry.bookImage|first}}" width="100%" height="100%">
+                    {% endif %}
+                  </li>
+                  <li></li>
+                </ul>
+              <!-- Pages -->
+                <ul class='page'>
+                  <li data-front="Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments" data-back="Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments">
+                  </li>
+                  <li>
+                    Every day, God reveals himself ...
+                    <a class="btn open-trigger" href="#">Read Example</a>
+                  </li>
+                  <li data-front="Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments" data-back="Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments">
+                  </li>
+                  <li data-front="Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments" data-back="Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments">
+                  </li>
+                  <li data-front="Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments" data-back="Every day, God reveals himself through the smallest details in our lives. But how often do you take the time to recognize and appreciate these moments">
+                  </li>
+                </ul>
+              <!-- Back -->
+                <ul class='hardcover_back'>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <ul class='book_spine'>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </figure>
+            </li>
+          </div>
+          {% if entry.bookImage|length %}
+            <img src="{{entry.bookMobileImage|first.url}}" alt="{entry.bookMobileImage|first}}" class="tablet-mobile-only" width="100%" height="100%">
+           {% endif %}
 
-            <!-- Front -->
-
-              <ul class='hardcover_front'>
-                <li>
-                  <img src="/resources/images/JanetEvans_Cover.jpg" alt="" width="100%" height="100%">
-                </li>
-                <li></li>
-              </ul>
-
-            <!-- Pages -->
-
-              <ul class='page'>
-                <li></li>
-                <li>
-                  <a class="btn open-trigger" href="#">Download</a>
-                </li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-
-            <!-- Back -->
-
-              <ul class='hardcover_back'>
-                <li></li>
-                <li></li>
-              </ul>
-              <ul class='book_spine'>
-                <li></li>
-                <li></li>
-              </ul>
-            </figure>
-          </li>
+          <div class="btn-container tablet-only">
+            {% if entry.bookCta %}
+              <a href="" class="btn mobile-top">{{ entry.bookCta }}</a>
+            {% endif %}
+            {% if entry.sampleCta %}
+              <a href="" class="btn open-trigger">{{ entry.sampleCta }}</a>
+            {% endif %}
+          </div>
         </div>
-        </div>
-
       {% endif %}
     </div>
   </div>
@@ -98,17 +107,23 @@ Every day, God reveals himself through the smallest details in our lives. But ho
 <section id="the-author">
   <div class="wrap">
     <div class="grid">
-     <div class="author-left col col-7-of-12"> 
-        {{entry.authorCopy}}
-        <div class="btn-container">
-            {% if entry.blogCta %}
-              <a href="" class="btn">{{ entry.blogCta }}</a>
-            {% endif %}
-            {% if entry.facebookCta %}
-              <a href="" class="btn">{{ entry.facebookCta }}</a>
-            {% endif %}
+      <div class="col col-7-of-12"> 
+        <div class="author-left">
+          {{entry.authorCopy}}
+          <div class="grid">
+            <div class="col col-1-of-2 col-m-1-or-2">
+              {% if entry.blogCta %}
+                <a href="/blog" class="btn mobile-top">{{ entry.blogCta }}</a>
+              {% endif %}
+            </div>
+            <div class="col col-1-of-2 col-m-1-or-2">
+              {% if entry.facebookCta and siteInfo.facebook %}
+                <a href="{{siteInfo.facebook}}}" target="_blank" class="btn">{{ entry.facebookCta }}</a>
+              {% endif %}
+            </div>
           </div>
         </div>
+      </div>
       {% if entry.authorImage|length %}
         <div class="author-right col col-5-of-12">
           <img src="{{entry.authorImage|first.url}}" alt="entry.authorImage|first">
@@ -119,7 +134,7 @@ Every day, God reveals himself through the smallest details in our lives. But ho
 </section>
 <section id="events" class="yellow">
   <div class="wrap">
-  <h2>{{ entry.eventsHeader }}<span><a href="#" class="arrow-left hidden"><</a><a href="#" class="arrow-right">></a></span></h2>
+  <h2>{{ entry.eventsHeader }}<span><a href="#" class="arrow-left icon-arrow-left hidden"></a><a href="#" class="arrow-right icon-arrow-right"></a></span></h2>
     <div class="events-container">
     {% set events = craft.entries.section('events').find() %}
     {% if events|length %}
@@ -128,16 +143,16 @@ Every day, God reveals himself through the smallest details in our lives. But ho
           <div class="events-row{{ loop.first ? ' active' : '' }}">
             <div class="grid">
         {% endif %}
-            <div class="col col-1-of-2 event">
+            <div class="col col-1-of-2 col-m-1-of-2 event">
               <div class="event">
                 <div class="grid">
-                  <div class="col col-1-of-5">
+                  <div class="col col-1-of-5 col-s-1-of-4">
                     <div class="event-date">
                       <p class="event-month">{{ event.date|date('F') }}</p>
                       <p class="event-day">{{ event.date|date('j')}}</p>
                     </div>
                   </div>
-                  <div class="col col-4-of-5">
+                  <div class="col col-4-of-5 col-s-3-of-4">
                     <h3>{{ event.title }}</h3>
                     <h5>{{ event.date|date("F j") }}</h5>
                     <p>{{ event.body }}</p>
@@ -155,15 +170,17 @@ Every day, God reveals himself through the smallest details in our lives. But ho
     </div>
   </div>
 </section>
-<section id="banner">
+<section id="banner" class="desktop-tablet-only">
   <div class="wrap">
-    <div class="grid">
+    <div class="grid grid-no-gutter">
       {% if entry.bookImage|length %}
-        <div class="col col-1-of-4 banner-left">
-          <img src="{{entry.bannerImage|first.url}}" alt="entry.bannerImage|first">
+        <div class="col col-1-of-4 col-m-1-of-3">
+          <div class="banner-left">
+            <img src="{{entry.bannerImage|first.url}}" alt="entry.bannerImage|first">
+          </div>
         </div>
       {% endif %}
-      <div class="col col-3-of-4 grid">
+      <div class="col col-3-of-4 col-m-2-of-3 grid">
         {% if entry.bannerCopy %}
           <div class="col col-2-of-3 banner-center">
             {{entry.bannerCopy}}
@@ -178,7 +195,11 @@ Every day, God reveals himself through the smallest details in our lives. But ho
     </div>
   </div>
 </section>
+{% if entry.formImage|length %}
+<section id="connect" class="orange" style="background:url({{entry.formImage|first.url}}) no-repeat; background-size: 100% 100%;">
+{% else %}
 <section id="connect" class="orange">
+{% endif %}
   <div class="wrap">
     <div class="form-container">
 
@@ -230,7 +251,7 @@ Every day, God reveals himself through the smallest details in our lives. But ho
     <h2>Share This Page
     <span><a href="https://www.facebook.com/sharer/sharer.php?u={{ siteUrl }}" class="icon-facebook"></a></span>
     <span><a href="https://twitter.com/home?status={{ siteUrl }}" class="icon-twitter"></a></span>
-    <span><a href="https://plus.google.com/share?url={{ siteUrl }}" class="icon-gplus"></a></span>
+    <span class="desktop-tablet-only"><a href="https://plus.google.com/share?url={{ siteUrl }}" class="icon-gplus"></a></span>
     <span><a href="mailto:sdf?&cc=safd&bcc=asdf&subject=sdf&body={{ siteUrl }}" class="icon-mail"></a></span></h2>
   </div>
 </section>

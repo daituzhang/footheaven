@@ -188,14 +188,13 @@ $toast-pulls: true !default;
   padding-left: $toast-gutter-width;
   vertical-align: top;
 
-  @media (max-width: $toast-breakpoint-medium) {
-    display: block;
-    margin-left: 0;
-    margin-right: 0;
-    width: auto;
-  }
-
-  @media (max-width: $toast-breakpoint-medium) and (min-width: $toast-breakpoint-small) {
+  @include tablet-only {
+    &:not([class*="col-m-"]){
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+      width: auto;
+    }
     &[class*="#{$toast-grid-column-namespace}-m-"] {
       display: inline-block;
       margin-right: -.24em;
@@ -217,16 +216,18 @@ $toast-pulls: true !default;
       width: percentage(1/4);
     }
 
-    &.#{$toast-grid-column-namespace}-m-2-of-4 {
-      @extend .#{$toast-grid-column-namespace}-m-1-of-2;
-    }
-
     &.#{$toast-grid-column-namespace}-m-3-of-4 {
       width: percentage(3/4);
     }
   }
 
-  @media (max-width: $toast-breakpoint-small) {
+  @include mobile-only {
+    &:not([class*="col-s-"]){
+      display: block;
+      margin-left: 0;
+      margin-right: 0;
+      width: auto;
+    }
     &[class*="#{$toast-grid-column-namespace}-s-"] {
       display: inline-block;
       margin-right: -.24em;
@@ -246,10 +247,6 @@ $toast-pulls: true !default;
 
     &.#{$toast-grid-column-namespace}-s-1-of-4 {
       width: percentage(1/4);
-    }
-
-    &.#{$toast-grid-column-namespace}-s-2-of-4 {
-      @extend .#{$toast-grid-column-namespace}-s-1-of-2;
     }
 
     &.#{$toast-grid-column-namespace}-s-3-of-4 {
@@ -281,11 +278,11 @@ $toast-pulls: true !default;
   margin-left: 0;
   width: 100%;
 
-  .#{$toast-grid-column-namespace} {
+  > .#{$toast-grid-column-namespace} {
     padding-left: 0;
   }
 
-  .#{$toast-grid-column-namespace}-span-all {
+  > .#{$toast-grid-column-namespace}-span-all {
     margin-left: 0;
     width: 100%;
   }

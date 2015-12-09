@@ -29,9 +29,9 @@ return array(
         'devMode' => true,
         'environmentVariables' => array(
             'env' => 'dev',
-            'fileSystemPath' => '/vagrant/public/',
+            'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'My Personal Valet',
+            'siteName' => 'jan',
         )
     ),
 

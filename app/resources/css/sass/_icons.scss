@@ -19,7 +19,9 @@
 }
 */
  
- [class^="icon-"]:before, [class*=" icon-"]:before {
+ [class^="icon-"]:before, 
+ [class*=" icon-"]:before,
+ .icon-close:after {
   font-family: "janetevans";
   font-style: normal;
   font-weight: normal;
@@ -62,3 +64,6 @@
 .icon-twitter:before { content: '\e805'; } /* '' */
 .icon-mail:before { content: '\e806'; } /* '' */
 .icon-search:before { content: '\e807'; } /* '' */
+.icon-arrow-left:before { content: '\e808'; } /* '' */
+.icon-arrow-right:before { content: '\e809'; } /* '' */
+.icon-close:after { content: '\e80a'; } /* '' */

@@ -1,11 +1,11 @@
 @import "compass/css3";
 @import "compass/css3/transform";
 @import "compass/utilities/general/clearfix";
-@import "mixin";
 @import "functions";
+@import "variables";
+@import "mixin";
 @import "reset";
 @import "fonts";
-@import "variables";
 @import "grid";
 @import "icons";
 @import "book/book";
@@ -15,3 +15,4 @@
 @import "footer";
 @import "home";
 @import "blog";
+@import "sections/404";
