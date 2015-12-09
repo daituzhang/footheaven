@@ -25,7 +25,7 @@ form {
     color: $gray-dark;
     padding: rem(10);
   }
-  p {
+  p.required {
     font-size: rem(12);
     margin-bottom: rem(20);
     &:before {
@@ -35,6 +35,12 @@ form {
     }
   }
 }
+
+.formbuilder-notification {
+  font-weight: 500;
+  font-size: rem(18);
+}
+
 .formError {
   z-index: 990;
 }
