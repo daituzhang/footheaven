@@ -202,13 +202,13 @@
   [class^='arrow'] {
     color: $green-medium;
     font-size: rem(28);
-    opacity: 1;
     @include transition(all .5s ease);
     &:hover {
       color: $green-dark;
     }
     &.hidden {
-      opacity: 0;
+      color: $gray-light;
+      pointer-events: none;
     }
   }
   .arrow-left {

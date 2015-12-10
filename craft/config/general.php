@@ -4,6 +4,7 @@ return array(
     '*' => array(
         'omitScriptNameInUrls' => true,
         'maxUploadFileSize' => 335544322,
+        'siteFullUrl' => 'http://findinggodeveryday.com'
     ),
 
     'dev' => array(

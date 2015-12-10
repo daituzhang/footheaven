@@ -28,12 +28,12 @@
         </header>
         
         <div class="grid">
-          <div class="col col-3-of-4 col-m-3-of-4 blog-left">
+          <div class="col col-3-of-5 col-m-3-of-5 blog-left">
             <div itemprop="articleBody">
               {{ entry.instaBlogBody }}
             </div>
           </div>
-          <div class="col col-1-of-4 col-m-1-of-4 blog-right">
+          <div class="col col-2-of-5 col-m-2-of-5 blog-right">
             {% if entry.instaBlogImage|length %}
               <img src="{{ entry.instaBlogImage|first.url }}" alt="entry.instaBlogImage|first">
             {% endif %}

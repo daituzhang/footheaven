@@ -5,8 +5,9 @@
   }
   h1 {
     color: $blog-black;
-    font-size: rem(60);
-    margin-bottom: 0;
+    font-size: 3.33rem;
+    line-height: 1.1em;
+    margin-bottom: rem(10);
   }
   h3 {
     color: $gray-light;
@@ -16,6 +17,7 @@
     color: $blog-black;
     font-size: rem(28);
     font-weight: 600;
+    line-height: 1.4em;
   }
   h5 {
     color: $gray-light;
@@ -26,6 +28,9 @@
     background-color: $gray-lighter;
     border: 1px solid $gray-lighter;
     margin-bottom: rem(37);
+  }
+  p {
+    color: $gray-dark;
   }
   #site-nav {
     float: left;
@@ -122,13 +127,16 @@
           font-size: rem(20);
           margin: 0 rem(15);
         }
+        p {
+          margin-bottom: rem(30);
+        }
       }
     }
     .blog-right {
       img,
       .tags,
       .shares {
-        margin-bottom: rem(54);
+        margin-bottom: 2rem;
       }
       h5 {
         font-weight: 700;
