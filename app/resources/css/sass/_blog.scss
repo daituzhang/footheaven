@@ -47,7 +47,7 @@
       background: transparent;
       border: none;
       font-size: rem(20);
-      padding: 0 rem(5);
+      padding: .3em .5rem;
       @include overlap;
       :before {
         @include transform( scaleX(-1));
@@ -115,6 +115,9 @@
   }
   .blog-entry {
     font-size: rem(16);
+    img {
+      margin-bottom: 2rem;
+    }
     article {
       header {
         margin-bottom: rem(50);
@@ -130,10 +133,10 @@
         p {
           margin-bottom: rem(30);
         }
+        img {}
       }
     }
     .blog-right {
-      img,
       .tags,
       .shares {
         margin-bottom: 2rem;

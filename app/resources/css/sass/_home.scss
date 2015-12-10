@@ -128,6 +128,11 @@
   p {
     margin-bottom: rem(40);
   }
+  @include tablet-only {
+    .wrap {
+      padding: 3.33rem $padding-gap;
+    }
+  }
   @include tablet-mobile {
     img {
       margin-top: rem(50);
@@ -207,7 +212,7 @@
       color: $green-dark;
     }
     &.hidden {
-      color: $gray-light;
+      color: rgba($green-medium, 0.4);
       pointer-events: none;
     }
   }

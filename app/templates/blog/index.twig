@@ -17,7 +17,7 @@
           <article itemtype="http://schema.org/Article">
             <header>
               {% if blog.instaBlogImage|length %}
-                <img src="{{ blog.instaBlogImage|first.url }}" alt="blog.instaBlogImage|first">
+                <a href="/{{ blog.uri }}" itemprop="name"><img src="{{ blog.instaBlogImage|first.url }}" alt="blog.instaBlogImage|first"></a>
               {% endif %}
               <h4><a href="/{{ blog.uri }}" itemprop="name">{{ blog.title }}</a></h4>
             </header>

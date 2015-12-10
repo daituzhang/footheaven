@@ -133,6 +133,9 @@ function navOpen(){
     e.preventDefault();
     $('body').toggleClass('nav-open lock');
   });
+  $('#site-nav').find('a').click(function (e) {
+    $('body').removeClass('nav-open lock');
+  })
 }
 
 $(document).ready(function() {
