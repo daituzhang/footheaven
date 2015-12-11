@@ -47,7 +47,7 @@
       background: transparent;
       border: none;
       font-size: rem(20);
-      padding: .3em .5rem;
+      padding: 0 .5rem;
       @include overlap;
       :before {
         @include transform( scaleX(-1));
@@ -57,7 +57,7 @@
       font-size: rem(14);
       font-weight: 300;
       margin-bottom: 0;
-      padding: rem(10) rem(37);
+      padding: rem(10) rem(5) rem(10) rem(37);
       @include input-placeholder {
         color: $blog-search-gray;
         font-style: italic;
@@ -196,6 +196,11 @@
     background: $blog-footer-gray;
     border-top: 1px solid $gray-light;
   }
+  @include tablet-only {
+    .blog-search {
+      max-width: 25%;
+    }
+  }
   @include mobile-only {
     .wrap {
       padding-left: $padding-mobile-gap;
@@ -206,6 +211,9 @@
       margin: rem(10) -9.5% 0;
       input {
         border: 5px solid $green;
+      }
+      button {
+        padding: .3em .5rem;
       }
     }
     #site-header {

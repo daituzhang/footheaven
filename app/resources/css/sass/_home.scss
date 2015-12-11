@@ -18,7 +18,7 @@
   }
 }
 #example {
-  background: $white;
+  background-color: $white;
   color: $gray-dark;
   font-size: rem(16);
   height: 100vh;
@@ -115,7 +115,7 @@
   }
 }
 #the-author {
-  background: $white;
+  background-color: $white;
   color: $gray-dark;
   font-size: rem(18);
   .wrap {
@@ -230,7 +230,6 @@
     max-width: rem(80);
     padding: rem(10) 0;
     text-align: center;
-    text-align: center;
     width: 100%;
   }
   .event-day {
@@ -244,7 +243,7 @@
   }
 }
 #banner {
-  background: $white;
+  background-color: $white;
   color: $gray-dark;
   font-size: rem(15);
   .banner-left {

@@ -65,7 +65,7 @@
 
 //media queries
 @mixin mobile-only {
-  @media only screen and (max-width : $mobile) {
+  @media only screen and (max-width : $mobile) and (min-device-width : $tablet-device + 1){
     @content;
   }
   @media only screen and (max-device-width : $mobile-device) {
@@ -74,7 +74,7 @@
 }
 
 @mixin tablet-only {
-  @media only screen and (min-width : $mobile + 1) and (max-width : $tablet) {
+  @media only screen and (min-width : $mobile + 1) and (max-width : $tablet) and (min-device-width : $tablet-device + 1) {
     @content;
   }
   @media only screen and (min-device-width : $mobile-device + 1) and (max-device-width : $tablet-device) {
@@ -83,7 +83,7 @@
 }
 
 @mixin tablet-mobile {
-  @media only screen and (max-width : $tablet) {
+  @media only screen and (max-width : $tablet) and (min-device-width : $tablet-device + 1) {
     @content;
   }
   @media only screen and (max-device-width : $tablet-device) {
@@ -92,16 +92,13 @@
 }
 
 @mixin desktop-only {
-  @media only screen and (min-width : $tablet + 1) {
-    @content;
-  }
-  @media only screen and (min-device-width : tablet-device) {
+  @media only screen and (min-width : $tablet + 1) and (min-device-width : $tablet-device + 1) {
     @content;
   }
 }
 
 @mixin desktop-tablet {
-  @media only screen and (min-width : $mobile + 1) {
+  @media only screen and (min-width : $mobile + 1) and (min-device-width : $tablet-device + 1) {
     @content;
   }
   @media only screen and (min-device-width : $mobile-device + 1) {
