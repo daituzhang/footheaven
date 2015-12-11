@@ -25,4 +25,13 @@ footer {
       background: $blue-twitter;
     }
   }
+  @include mobile-only {
+    .col.footer-left {
+      font-size: rem(10);
+    }
+    .col.footer-right [class^='icon-'] {
+      max-width: 50%;
+      padding: rem(13) rem(10);
+    }
+  }
 }

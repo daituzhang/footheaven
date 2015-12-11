@@ -16,6 +16,16 @@ return array(
             'siteName' => 'jan',
         )
     ),
+    'localhost' => array(
+        'devMode' => true,
+        'environmentVariables' => array(
+            'env' => 'dev',
+            'fileSystemPath' => '/vagrant/app/',
+            'frontEndAssets' => '/src/',
+            'siteName' => 'jan',
+        )
+    ),
+
     '10.0.1.136' => array(
         'devMode' => true,
         'environmentVariables' => array(
