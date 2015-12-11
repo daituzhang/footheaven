@@ -26,13 +26,13 @@ return array(
         )
     ),
 
-    '10.0.1.136' => array(
+    '10.0.1.231' => array(
         'devMode' => true,
         'environmentVariables' => array(
             'env' => 'dev',
-            'fileSystemPath' => '/vagrant/public/',
+            'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'My Personal Valet',
+            'siteName' => 'jan',
         )
     ),
 

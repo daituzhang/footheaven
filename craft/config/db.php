@@ -25,11 +25,11 @@ return array(
         'database' => 'janet',
     ),
 
-    '10.0.1.136' => array(
+    '10.0.1.231' => array(
         'server' => 'localhost',
         'user' => 'root',
         'password' => '',
-        'database' => 'mpv',
+        'database' => 'janet',
     ),
 
     'janet.70kft.com' => array(
