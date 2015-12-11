@@ -1,0 +1,26 @@
+.not-found {
+  #site-header {
+    background: $white;
+  }
+  background: $white;
+  text-align: center;
+  color: #333;
+  h1 {
+    margin-bottom: rem(50);
+  }
+  section {
+    padding-top: rem(60);
+    p {
+      margin-bottom: rem(100);
+    }
+  }
+  .btn {
+    display: inline-block;
+    &:first-child {
+      margin-right: rem(20);
+    }
+  }
+  .btn-container{
+    margin: 0 auto;
+  }
+}

@@ -5,36 +5,42 @@ form {
   input,
   textarea {
     display: block;
-    width: 100%;
     margin-bottom: rem(20);
+    width: 100%;
   }
   label {
-    font-weight: 500;
     font-size: rem(18);
+    font-weight: 500;
     margin-bottom: rem(15);
     &.required:after {
-      content: '*';
       color: $red;
+      content: '*';
       margin-left: rem(3);
     }
   }
   input,
   textarea {
-    padding: rem(10);
-    box-shadow: none;
     border: none;
+    box-shadow: none;
     color: $gray-dark;
+    padding: rem(10);
   }
-  p {
+  p.required {
+    font-size: rem(12);
     margin-bottom: rem(20);
-    font-size: rem(12);    
     &:before {
-      content: '*';
       color: $red;
+      content: '*';
       margin-right: rem(3);
     }
   }
 }
+
+.formbuilder-notification {
+  font-weight: 500;
+  font-size: rem(18);
+}
+
 .formError {
   z-index: 990;
 }
@@ -80,16 +86,14 @@ form {
 }
 
 .ajaxSubmit {
-  background: #55ea55;
+  background-color: #55ea55;
   border: 1px solid #999;
   display: none;
   padding: 20px;
 }
 
 .formError .formErrorContent {
-  @include border-radius(6px);
-  @include box-shadow(0 0 6px #000);
-  background: #ee0101;
+  background-color: #ee0101;
   border: 2px solid #ddd;
   color: #fff;
   font-size: 11px;
@@ -97,20 +101,22 @@ form {
   padding: 4px 10px 4px 10px;
   position: relative;
   width: 100%;
+  @include border-radius(6px);
+  @include box-shadow(0 0 6px #000);
 }
 
 .formError.inline .formErrorContent {
+  border: none;
   @include border-radius(0);
   @include box-shadow(none);
-  border: none;
 }
 
 .greenPopup .formErrorContent {
-  background: #33be40;
+  background-color: #33be40;
 }
 
 .blackPopup .formErrorContent {
-  background: #393939;
+  background-color: #393939;
   color: #fff;
 }
 
@@ -125,14 +131,13 @@ body.rtl .formError .formErrorArrow {
 }
 
 .formError .formErrorArrowBottom {
-  @include box-shadow(none);
   margin: 0 0 0 12px;
   top: 2px;
+  @include box-shadow(none);
 }
 
 .formError .formErrorArrow div {
-  @include box-shadow(0 2px 3px #444);
-  background: #ee0101;
+  background-color: #ee0101;
   border-left: 2px solid #ddd;
   border-right: 2px solid #ddd;
   display: block;
@@ -141,6 +146,7 @@ body.rtl .formError .formErrorArrow {
   height: 1px;
   line-height: 0;
   margin: 0 auto;
+  @include box-shadow(0 2px 3px #444);
 }
 
 .formError .formErrorArrowBottom div {
@@ -148,11 +154,11 @@ body.rtl .formError .formErrorArrow {
 }
 
 .greenPopup .formErrorArrow div {
-  background: #33be40;
+  background-color: #33be40;
 }
 
 .blackPopup .formErrorArrow div {
-  background: #393939;
+  background-color: #393939;
   color: #fff;
 }
 
@@ -194,13 +200,13 @@ body.rtl .formError .formErrorArrow {
 }
 
 .formError .formErrorArrow .line2 {
-  background: #ddd;
+  background-color: #ddd;
   border: none;
   width: 3px;
 }
 
 .formError .formErrorArrow .line1 {
-  background: #ddd;
+  background-color: #ddd;
   border: none;
   width: 1px;
 }

@@ -13,7 +13,7 @@
         <hr>
       </header>
       <div class="grid">
-        <div class="col col-3-of-4 blog-left">
+        <div class="col col-3-of-4 col-m-3-of-4 blog-left">
           <ul>
           {% for tag in instaTags %}
             <li><a href="/blog/tag/{{ tag.name|split(' ')|join('-')|lower }}">{{ tag.name }}</a>
@@ -24,7 +24,7 @@
         <hr>
       </header>
       <div class="grid">
-          <div class="col col-3-of-4 blog-left">
+          <div class="col col-3-of-4 col-m-3-of-4 blog-left">
           {% paginate craft.entries.search(tags).section('instaBlog').limit(10).order('dateCreated') as entries %}  
             {% if entries|length %}
               {% include 'blog/_entries.twig' %}

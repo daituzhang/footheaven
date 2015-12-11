@@ -22,7 +22,7 @@ return array(
         'server' => 'localhost',
         'user' => 'root',
         'password' => '',
-        'database' => 'mpv',
+        'database' => 'janet',
     ),
 
     '10.0.1.136' => array(
@@ -32,11 +32,11 @@ return array(
         'database' => 'mpv',
     ),
 
-    'jan.70kft.com' => array(
+    'janet.70kft.com' => array(
         'server' => 'localhost',
-        'user' => '70kft',
+        'user' => 'janet',
         'password' => 'Secure2015',
-        'database' => 'mpv',
+        'database' => 'janet',
     ),
     
     '7jhd-wnvl.accessdomain.com' => array(

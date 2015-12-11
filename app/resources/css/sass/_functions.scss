@@ -1,4 +1,5 @@
 $px-base: 18px !default;
+$px-base-num: 18 !default;
 
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
@@ -24,6 +25,6 @@ $px-base: 18px !default;
   @return ($target-px / $context) * 1em;
 }
 
-@function em($pixels, $context: $px-base) {
+@function em($pixels, $context: $px-base-num) {
   @return ($pixels / $context) * 1em;
 }

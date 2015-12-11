@@ -2,6 +2,7 @@
 $white : #FFFFFF;
 $black : #000000;
 $yellow: #fff6c9;
+$yellow-dark: #F0E6B6;
 $orange: #FF9666;
 $gray: #1a4f44;
 $gray-lighter: #eaeaea;
@@ -28,6 +29,13 @@ $blog-search-gray: #888888;
 $blog-footer-gray: #f8f8f8;
 
 $padding-gap: rem(80);
+$padding-mobile-gap: 8%;
 
-$breakpoint-medium: 770px !default;
-$breakpoint-small: 480px !default;
+$breakpoint-medium: 1024px !default;
+$breakpoint-small: 760px !default;
+
+$mobile: $breakpoint-small;
+$tablet: $breakpoint-medium;
+
+$mobile-device: $breakpoint-small;
+$tablet-device: $breakpoint-medium;

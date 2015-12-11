@@ -19,8 +19,28 @@
 {% extends "_layout" %}
 {% set title = "404" %}
 
+{% block bodyClass %}not-found{% endblock %}
+{% block nav %}
+  <nav id="site-nav" role="navigation">
+    <ul>
+      <a href="/#the-book"><li>The Book</li></a>
+      <a href="/#the-author"><li>The Author</li></a>
+      <a href="/#connect"><li>Connect</li></a>
+      <a href="/blog"><li>Blog</li></a>
+    </ul>
+  </nav>
+{% endblock %}
 {% block content %}
-	<h1>Page not found</h1>
+<section>
+  <div class="wrap">
+  	<h1>Uh oh!<br>This page can't be found.</h1>
 
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+  	<p>Intrinsicly target B2C solutions without sticky architectures. Continually underwhelm high standards in outsourcing vis-a-vis resource-leveling models.</p>
+
+    <div class="btn-container">
+        <a href="/" class="btn mobile-top">Return to Homepage</a>
+        <a href="/blog" class="btn">Visit the Blog</a>
+    </div>
+  </div>  
+</section> 
 {% endblock %}

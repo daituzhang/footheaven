@@ -15,7 +15,7 @@
       <hr>
     </header>
     <div class="grid">
-      <div class="col col-3-of-4 blog-left">
+      <div class="col col-3-of-4 col-m-3-of-4 blog-left">
       {% paginate craft.entries.search('*'~query~'*').section('instaBlog').limit(10).order('score') as entries %}
         {% if entries|length %}
           {% include 'blog/_entries.twig' %}
