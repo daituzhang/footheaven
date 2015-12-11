@@ -70,21 +70,3 @@
       </form>
 		{% endblock %}
 		{% block bodyClass %}blog{% endblock %}
-		{% block breadcrumbs %}
-		{# incase breadcrumbs back
-		<div class="wrap">
-		  <ul class="crumbs">
-		      <li><i><a href="/">Home</a></i></li>
-		      {% if craft.request.segment(2) == '' %}
-		      	<li><i>Blog</i></li>
-		      {% elseif craft.request.segment(3) == '' %}
-		      	<li><i><a href="/blog">Blog</a></i></li>
-		        <li><i>{{craft.request.segment(2)}}</i></li>
-		      {% else %}
-		      	<li><i><a href="/blog">Blog</a></i></li>
-		        <li><i>{{craft.request.segment(3)}}</i></li>
-		      {% endif %}
-		  </ul>
-    </div>
-    breadcumbs finish #}
-		{% endblock %}
