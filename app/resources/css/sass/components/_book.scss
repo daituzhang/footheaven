@@ -177,6 +177,9 @@ $book-mobile-height: 300px;
 	 		content: attr(data-back);
 			border-radius: 0px 5px 5px 0px;
 	 	}
+	 	.open-trigger {
+	 		margin-top: 50%;
+	 	}
  }
 	/*
 		3. opening cover, back cover and pages
@@ -740,6 +743,11 @@ $book-mobile-height: 300px;
 		} 
 		.page > li {
 			backface-visibility: visible;
+			&:before,
+			&:after {
+				content: "";
+				backface-visibility: hidden;
+			}
 		}
 		.book {
 			@include transition(all 3s ease);

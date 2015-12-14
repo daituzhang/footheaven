@@ -25,7 +25,7 @@ return array(
         'database' => 'janet',
     ),
 
-    '10.0.1.231' => array(
+    '10.0.1.88' => array(
         'server' => 'localhost',
         'user' => 'root',
         'password' => '',
