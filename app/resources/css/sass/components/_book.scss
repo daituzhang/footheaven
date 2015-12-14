@@ -73,35 +73,35 @@ $book-mobile-height: 300px;
 	1. container
 */
 
-.book {
-	@include transition(all 3s ease);
-	position: relative;
-	width: $book-width; 
-	height: $book-height;
-	-webkit-perspective: 1000px;
-	-moz-perspective: 1000px;
-	perspective: 1000px;
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	z-index: 3;
-	opacity: 1;
-	&.open {
-		@include transform(translate3d(-50%,0,0));
-		width: 50vw !important;
-		height: 100vh !important;
-		opacity: 0;
-		@include perspective(5000px);
+	.book {
+		@include transition(all 3s ease);
+		position: relative;
+		width: $book-width; 
+		height: $book-height;
+		-webkit-perspective: 1000px;
+		-moz-perspective: 1000px;
+		perspective: 1000px;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		z-index: 3;
+		opacity: 1;
+		&.open {
+			@include transform(translate3d(-50%,0,0));
+			width: 50vw !important;
+			height: 100vh !important;
+			opacity: 0;
+			@include perspective(5000px);
+		}
+		@include tablet-only {
+			width: $book-tablet-width;
+			height: $book-tablet-height;
+		}
+			@include mobile-only {
+			width: $book-mobile-width;
+			height: $book-mobile-height;
+		}
 	}
-	@include tablet-only {
-		width: $book-tablet-width;
-		height: $book-tablet-height;
-	}
-		@include mobile-only {
-		width: $book-mobile-width;
-		height: $book-mobile-height;
-	}
-}
 
 
 	/* HARDCOVER FRONT */
@@ -728,4 +728,28 @@ $book-mobile-height: 300px;
 			font-size: 90%;
 		}
 	}
+}
+
+.ie-11 {
+	.book-open{
+		.hardcover_front{
+			backface-visibility: visible;
+			li:first-child {
+				backface-visibility: visible;
+			}
+		} 
+		.page > li {
+			backface-visibility: visible;
+		}
+		.book {
+			@include transition(all 3s ease);
+			&.open {
+				@include transform(translate3d(-50%,0,0));
+				width: $book-width !important;
+				height: $book-height !important;
+				opacity: 0;
+				@include perspective(2000px);
+			}
+		}
+	} 
 }
