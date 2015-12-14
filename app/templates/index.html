@@ -20,6 +20,7 @@
 {% set form = craft.formBuilder.getFormByHandle('connect') %}
 {% set tabs = form.fieldLayout.getFieldLayout().getTabs() %}
 {% set pluginScripts = craft.formBuilder.pluginScripts(form) %}
+{% set blogs = craft.entries.section('instaBlog') %}
 
 
 {% extends "_layout" %}
@@ -118,7 +119,7 @@
           <div class="grid">
             <div class="col col-1-of-2 col-m-1-or-2">
               {% if entry.blogCta %}
-                <a href="/blog" class="btn mobile-top">{{ entry.blogCta }}</a>
+                <a href="/{{blogs.first.uri}}" class="btn mobile-top">{{ entry.blogCta }}</a>
               {% endif %}
             </div>
             <div class="col col-1-of-2 col-m-1-or-2">
@@ -201,7 +202,7 @@
   </div>
 </section>
 {% if entry.formImage|length %}
-<section id="connect" class="orange" style="background:url({{entry.formImage|first.url}}) no-repeat; background-size: 100% 100%;">
+<section id="connect" class="orange" style="background:url({{entry.formImage|first.url}}) no-repeat; background-size: cover; background-position: 50% 50%">
 {% else %}
 <section id="connect" class="orange">
 {% endif %}
@@ -242,7 +243,7 @@
         
         <p class="required">Indicates required field</p>
 
-        <button type="submit" class="btn white">Submit Message</button>
+        <button type="submit" class="btn white" id="connect-submit">Submit Message</button>
       </form>
     </div>
   </div>
@@ -252,7 +253,7 @@
     <h2>Share This Page
     <span><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ craft.config.siteFullUrl }}" class="icon-facebook"></a></span>
     <span><a target="_blank" href="https://twitter.com/home?status={{ craft.config.siteFullUrl }}" class="icon-twitter"></a></span>
-    <span class="desktop-tablet-only"><a href="https://plus.google.com/share?url={{ craft.config.siteFullUrl }}" class="icon-gplus"></a></span>
+    <span class="desktop-tablet-only"><a target="_blank" href="https://plus.google.com/share?url={{ craft.config.siteFullUrl }}" class="icon-gplus"></a></span>
     <span><a href="mailto:sdf?&cc=safd&bcc=asdf&subject=sdf&body={{ craft.config.siteFullUrl }}" class="icon-mail"></a></span></h2>
   </div>
 </section>

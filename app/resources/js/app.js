@@ -161,6 +161,13 @@ function ieFix(){
   } 
 }
 
+function formSubmit(){
+  $('#connect-submit').click(function (e) {
+    var top = $('.formbuilder-notification').offset().top - $('#site-header').height() - 10;
+    $(window).scrollTop(top);
+  });
+}
+
 $(document).ready(function() {
   ieFix();
   events();
@@ -168,6 +175,7 @@ $(document).ready(function() {
   navRoll();
   navOpen();
   anchorScroll();
+  formSubmit();
 });
 
 $(window).load(function() {
