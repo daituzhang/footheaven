@@ -79,6 +79,10 @@
   .wrap {
     padding: rem(70) $padding-gap rem(180);
   }
+  .mobile-book {
+    margin: 0 auto;
+    max-width: rem(250);
+  }
   h1 {
     color: #333;
   }
@@ -92,6 +96,9 @@
     .btn-container {
       padding-left: rem(40);
     }
+    .mobile-book {
+      margin-left: 10%;
+    }
   }
   @include mobile-only {
     text-align: center;
@@ -102,12 +109,13 @@
       font-size: rem(24);
     }
     .wrap > .grid {
-      padding-top: rem(350);
+      padding-top: rem(380);
     }
     .book-right {
-      left: 15%;
+      left: 0;
       position: absolute;
       top: 0;
+      width: 100%;
     }
     .btn-container {
       padding-left: 0 !important;
