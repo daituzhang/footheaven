@@ -2,6 +2,7 @@
 {% else %}
   {% set query = "" %}
 {% endif %}
+
   <div class="col col-1-of-4 col-m-1-of-4">
     <aside>      
       <h4>Categories</h4>
@@ -9,11 +10,6 @@
         {% nav category in craft.categories.group('instaBlogCategories') %}
           <li>
             <a href="{{ category.url }}">{{ category.title }}</a>
-            {% ifchildren %}
-              <ul>
-                {% children %}
-              </ul>
-            {% endifchildren %}
           </li>
         {% endnav %}
       </ul>
