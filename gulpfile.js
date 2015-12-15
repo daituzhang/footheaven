@@ -80,7 +80,7 @@ gulp.task('images', ['move'], function () {
 
 gulp.task('fonts', ['move'], function () {
 	return gulp.src('./app/resources/fonts/**/*')
-	.pipe(gulp.dest('./public/resources/fonts/**/*'));
+	.pipe(gulp.dest('./public/resources/fonts'));
 
 });
 
