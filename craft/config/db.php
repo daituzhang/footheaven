@@ -25,7 +25,7 @@ return array(
         'database' => 'janet',
     ),
 
-    '10.0.1.231' => array(
+    '10.0.1.88' => array(
         'server' => 'localhost',
         'user' => 'root',
         'password' => '',
@@ -39,11 +39,11 @@ return array(
         'database' => 'janet',
     ),
     
-    '7jhd-wnvl.accessdomain.com' => array(
+    'findinggodeveryday.com' => array(
         'server' => 'localhost',
-        'user' => 'mpvalet',
-        'password' => 'Z(=!<?G3dM8u#A@h',
-        'database' => 'mpvalet',
+        'user' => 'root',
+        'password' => 'CRgL4TnYvZbR9xGh',
+        'database' => 'janet',
     ),
 
   

@@ -26,7 +26,7 @@ return array(
         )
     ),
 
-    '10.0.1.231' => array(
+    '10.0.1.88' => array(
         'devMode' => true,
         'environmentVariables' => array(
             'env' => 'dev',
