@@ -55,7 +55,7 @@
       </div>
         <div class="book-right col col-5-of-12 col-m-1-of-2">
           <div class="book-open desktop-only">
-            <li>
+            <div>
               <figure class="book">
               <!-- Front -->
                 <ul class='hardcover_front'>
@@ -90,7 +90,7 @@
                   <li></li>
                 </ul>
               </figure>
-            </li>
+            </div>
           </div>
           {% if entry.bookMobileImage|length %}
             <img src="{{ entry.bookMobileImage|first.url }}" alt="{{ entry.bookMobileImage|first }}" class="tablet-mobile-only mobile-book
@@ -123,7 +123,7 @@
             </div>
             <div class="col col-1-of-2 col-m-1-or-2">
               {% if entry.facebookCta and siteInfo.facebook %}
-                <a href="{{siteInfo.facebook}}}" target="_blank" class="btn">{{ entry.facebookCta }}</a>
+                <a href="{{siteInfo.facebook}}" target="_blank" class="btn">{{ entry.facebookCta }}</a>
               {% endif %}
             </div>
           </div>
@@ -160,8 +160,8 @@
                   <div class="col col-4-of-5 col-s-3-of-4">
                     <h3>{{ event.title }}</h3>
                     <h5>{{ event.date|date("F j") }} <b>&middot;</b> {{event.date.localeTime()}} CST</h5>
-                    <p>{{ event.body }}</p>
-                    <p><a href="">{{ event.address }}</a></p>
+                    {{ event.body }}
+                    <p><a href="http://maps.google.com/?q={{ event.address }}">{{ event.address }}</a></p>
                   </div>
                 </div>
               </div>
@@ -209,7 +209,7 @@
     <div class="form-container">
 
       <h2>{{ form.name }}</h2>
-      <form method="post" accept-charset="utf-8" name="{{ form.handle }}" class="formbuilder-form" id="{{ form.handle }}" data-parsley-errors-container=".formbuilder-notification"{% if form.hasFileUploads %} enctype="multipart/form-data" {% endif %}>
+      <form method="post" accept-charset="utf-8" name="{{ form.handle }}" class="formbuilder-form" id="{{ form.handle }}-form" data-parsley-errors-container=".formbuilder-notification"{% if form.hasFileUploads %} enctype="multipart/form-data" {% endif %}>
         <input type="hidden" name="action" value="formBuilder/entries/saveFormEntry">
         <input type="hidden" name="formredirect" data-redirect="{{form.successPageRedirect}}" value="{{form.redirectUrl}}">
         <input type="hidden" name="formHandle" value="{{form.handle}}">
@@ -253,7 +253,7 @@
     <span><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ craft.config.siteFullUrl }}" class="icon-facebook"></a></span>
     <span><a target="_blank" href="https://twitter.com/home?status={{ craft.config.siteFullUrl }}" class="icon-twitter"></a></span>
     <span class="desktop-tablet-only"><a target="_blank" href="https://plus.google.com/share?url={{ craft.config.siteFullUrl }}" class="icon-gplus"></a></span>
-    <span><a href="mailto:sdf?&cc=safd&bcc=asdf&subject=sdf&body={{ craft.config.siteFullUrl }}" class="icon-mail"></a></span></h2>
+    <span><a href="mailto:sdf?'&amp;cc=safd'&amp;bcc=asdf'&amp;subject=sdf'&amp;body={{ craft.config.siteFullUrl }}" class="icon-mail"></a></span></h2>
   </div>
 </section>
 
