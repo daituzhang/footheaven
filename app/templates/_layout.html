@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
+  {% cache unless craft.config.environmentVariables['env'] == "dev" %}
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
@@ -27,11 +28,13 @@
 	<!-- endbuild -->
 	<script src="https://use.typekit.net/wuz8jhr.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+  {% endcache %}
 
 </head>
 
 <body class="{% block bodyClass %}home{% endblock %}">
 	<div id="container">
+    {% cache unless craft.config.environmentVariables['env'] == "dev" %}
 		<header id="site-header" class="top-nav-layer" data-height="0" data-0-top="hithg;" data-emit-events>
       <div class="wrap">
         <a href="#" class="hamburger mobile-only"><span>MENU</span></a>
@@ -73,6 +76,7 @@
           </div>
         </div>
   		</footer>
+      {% endcache %}
     </div>
 	</div>
 
@@ -80,7 +84,7 @@
 	    <script src="/resources/bower_components/jquery/dist/jquery.js"></script>
 	<!-- endbuild -->
 	<!-- build:js(app) /resources/js/app.min.js -->
-	    <script src="/resources/js/app.js"></script>
+	    <script async src="/resources/js/app.js"></script>
       <!-- Google Tag Manager -->
       <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KKLTZ3"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
