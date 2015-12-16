@@ -62,7 +62,7 @@ return array(
         'environmentVariables' => array(
             'env' => 'dev',
             'siteUrl'        => '/',
-            'fileSystemPath' => '/var/www/findinggodeveryday.com/app/',
+            'fileSystemPath' => '/var/www/findinggodeveryday.com/public/',
             'frontEndAssets' => '/src/',
             'siteName' => 'jan',
         )
