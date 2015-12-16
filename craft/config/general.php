@@ -26,7 +26,7 @@ return array(
         )
     ),
 
-    '10.0.1.88' => array(
+    '10.0.1.87' => array(
         'devMode' => true,
         'environmentVariables' => array(
             'env' => 'dev',
@@ -52,6 +52,17 @@ return array(
             'env' => 'dev',
             'siteUrl'        => '/',
             'fileSystemPath' => '/var/www/vhosts/stratospherecreative.com/subdomains/janet/public/',
+            'frontEndAssets' => '/src/',
+            'siteName' => 'jan',
+        )
+    ),
+
+    'lysm-zjrh.accessdomain.com' => array(
+        'devMode' => true,
+        'environmentVariables' => array(
+            'env' => 'dev',
+            'siteUrl'        => '/',
+            'fileSystemPath' => '/var/www/findinggodeveryday.com/public/',
             'frontEndAssets' => '/src/',
             'siteName' => 'jan',
         )

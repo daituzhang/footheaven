@@ -43,13 +43,13 @@
       width: rem(30);
       @include transition(all .3s ease);
       @include background(linear-gradient(to bottom,
-      transparent 0%, transparent 15%,
-      $font-green 15%, $font-green 25%,
-      transparent 25%, transparent 42%,
-      $font-green 42%, $font-green 52%,
-      transparent 52%, transparent 71%,
-      $font-green 71%, $font-green 81%,
-      transparent 81%, transparent 100%),
+      transparent 0%, transparent 14%,
+      $font-green 15%, $font-green 24%,
+      transparent 25%, transparent 41%,
+      $font-green 42%, $font-green 51%,
+      transparent 52%, transparent 69%,
+      $font-green 70%, $font-green 79%,
+      transparent 80%, transparent 100%),
       linear-gradient(transparent, transparent));
     }
     &:hover {
@@ -57,13 +57,13 @@
       &:after {
         content: '';
         @include background(linear-gradient(to bottom,
-        transparent 0%, transparent 15%,
-        $font-green-light 15%, $font-green-light 25%,
-        transparent 25%, transparent 42%,
-        $font-green-light 42%, $font-green-light 52%,
-        transparent 52%, transparent 71%,
-        $font-green-light 71%, $font-green-light 81%,
-        transparent 81%, transparent 100%),
+        transparent 0%, transparent 14%,
+        $font-green-light 15%, $font-green-light 24%,
+        transparent 25%, transparent 41%,
+        $font-green-light 42%, $font-green-light 51%,
+        transparent 52%, transparent 69%,
+        $font-green-light 70%, $font-green-light 79%,
+        transparent 80%, transparent 100%),
         linear-gradient(transparent, transparent));
       }
     }
@@ -115,9 +115,12 @@
         display: block;
         line-height: 0;
         margin: 0 auto;
-        padding: rem(30) 20px;
         text-align: left;
         @include transition(background .3s ease);
+        a {
+          display: block;
+          padding: rem(30) 20px;
+        }
         &:after {
           color: $font-green;
         }
