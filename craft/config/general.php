@@ -13,7 +13,7 @@ return array(
             'env' => 'dev',
             'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
     'localhost' => array(
@@ -22,7 +22,7 @@ return array(
             'env' => 'dev',
             'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
 
@@ -32,7 +32,7 @@ return array(
             'env' => 'dev',
             'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
 
@@ -42,7 +42,7 @@ return array(
             'env' => 'dev',
             'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
 
@@ -53,7 +53,7 @@ return array(
             'siteUrl'        => '/',
             'fileSystemPath' => '/var/www/vhosts/stratospherecreative.com/subdomains/janet/public/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
 
@@ -64,7 +64,7 @@ return array(
             'siteUrl'        => '/',
             'fileSystemPath' => '/var/www/findinggodeveryday.com/public/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
     // Treat *.vagrantshare.com the same as localhost
