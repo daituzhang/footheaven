@@ -25,7 +25,7 @@ return array(
         'database' => 'janet',
     ),
 
-    '10.0.1.88' => array(
+    '10.0.1.87' => array(
         'server' => 'localhost',
         'user' => 'root',
         'password' => '',
@@ -39,12 +39,17 @@ return array(
         'database' => 'janet',
     ),
     
-    'findinggodeveryday.com' => array(
+    // 'findinggodeveryday.com' => array(
+    //     'server' => 'localhost',
+    //     'user' => 'root',
+    //     'password' => 'CRgL4TnYvZbR9xGh',
+    //     'database' => 'janet',
+    // ),
+    'lysm-zjrh.accessdomain.com' => array(
         'server' => 'localhost',
         'user' => 'root',
         'password' => 'CRgL4TnYvZbR9xGh',
         'database' => 'janet',
     ),
-
   
 );

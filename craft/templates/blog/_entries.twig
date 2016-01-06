@@ -15,26 +15,25 @@
       </article>
     {% endfor %}
 
-      <nav>
-        {# Customize Pagination links Ref: http://buildwithcraft.com/docs/templating/paginate #}
-          {% if paginate.prevUrl %}
-            <a href="{{ paginate.firstUrl ~ queryString }}">First</a>
-            <a href="{{ paginate.prevUrl ~ queryString }}"><<</a>
-          {% endif %}
+    <nav>
+      {% if paginate.prevUrl %}
+        <a href="{{ paginate.firstUrl ~ queryString }}">First</a>
+        <a href="{{ paginate.prevUrl ~ queryString }}"><<</a>
+      {% endif %}
 
-          {% for page, url in paginate.getPrevUrls(5) %}
-              <a href="{{ url ~ queryString }}">{{ page }}</a>
-          {% endfor %}
+      {% for page, url in paginate.getPrevUrls(5) %}
+          <a href="{{ url ~ queryString }}">{{ page }}</a>
+      {% endfor %}
 
-          <span class="current">{{ paginate.currentPage }}</span>
+      <span class="current">{{ paginate.currentPage }}</span>
 
-          {% for page, url in paginate.getNextUrls(5) %}
-              <a href="{{ url ~ queryString }}">{{ page }}</a>
-          {% endfor %}
+      {% for page, url in paginate.getNextUrls(5) %}
+          <a href="{{ url ~ queryString }}">{{ page }}</a>
+      {% endfor %}
 
-          {% if paginate.nextUrl %}
-            <a href="{{ paginate.nextUrl ~ queryString }}">>></a>
-            <a href="{{ paginate.lastUrl ~ queryString }}">Last</a>
-          {% endif %}
-      </nav>
+      {% if paginate.nextUrl %}
+        <a href="{{ paginate.nextUrl ~ queryString }}">>></a>
+        <a href="{{ paginate.lastUrl ~ queryString }}">Last</a>
+      {% endif %}
+    </nav>
   {% endif %}

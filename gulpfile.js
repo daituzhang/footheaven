@@ -80,7 +80,7 @@ gulp.task('images', ['move'], function () {
 
 gulp.task('fonts', ['move'], function () {
 	return gulp.src('./app/resources/fonts/**/*')
-	.pipe(gulp.dest('./public/resources/styles'));
+	.pipe(gulp.dest('./public/resources/fonts'));
 
 });
 
@@ -96,8 +96,8 @@ gulp.task('usemin', ['templates'], function() {
 
 	return gulp.src('./app/templates/_layout.html')
 	.pipe(usemin({
-		// js: [uglify()],
-		// bower: [uglify()]
+		 js: [uglify()],
+		 bower: [uglify()]
 	}))
 	.pipe(gulp.dest('./craft/templates/'));
 

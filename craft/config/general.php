@@ -13,7 +13,7 @@ return array(
             'env' => 'dev',
             'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
     'localhost' => array(
@@ -22,17 +22,17 @@ return array(
             'env' => 'dev',
             'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
 
-    '10.0.1.88' => array(
+    '10.0.1.87' => array(
         'devMode' => true,
         'environmentVariables' => array(
             'env' => 'dev',
             'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
 
@@ -42,7 +42,7 @@ return array(
             'env' => 'dev',
             'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
         )
     ),
 
@@ -51,9 +51,20 @@ return array(
         'environmentVariables' => array(
             'env' => 'dev',
             'siteUrl'        => '/',
-            'fileSystemPath' => '/var/www/vhosts/stratospherecreative.com/subdomains/janet/app/',
+            'fileSystemPath' => '/var/www/vhosts/stratospherecreative.com/subdomains/janet/public/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'jan',
+            'siteName' => 'Finding God Everyday',
+        )
+    ),
+
+    'lysm-zjrh.accessdomain.com' => array(
+        'devMode' => true,
+        'environmentVariables' => array(
+            'env' => 'dev',
+            'siteUrl'        => '/',
+            'fileSystemPath' => '/var/www/findinggodeveryday.com/public/',
+            'frontEndAssets' => '/src/',
+            'siteName' => 'Finding God Everyday',
         )
     ),
     // Treat *.vagrantshare.com the same as localhost
