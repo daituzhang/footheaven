@@ -46,16 +46,16 @@ return array(
         )
     ),
 
-    'janet.70kft.com' => array(
-        'devMode' => true,
-        'environmentVariables' => array(
-            'env' => 'dev',
-            'siteUrl'        => '/',
-            'fileSystemPath' => '/var/www/vhosts/stratospherecreative.com/subdomains/janet/app/',
-            'frontEndAssets' => '/src/',
-            'siteName' => 'Finding God Everyday',
-        )
-    ),
+    // 'janet.70kft.com' => array(
+    //     'devMode' => true,
+    //     'environmentVariables' => array(
+    //         'env' => 'dev',
+    //         'siteUrl'        => '/',
+    //         'fileSystemPath' => '/var/www/vhosts/stratospherecreative.com/subdomains/janet/app/',
+    //         'frontEndAssets' => '/src/',
+    //         'siteName' => 'Finding God Everyday',
+    //     )
+    // ),
 
     'lysm-zjrh.accessdomain.com' => array(
         'devMode' => true,
