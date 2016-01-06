@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
+  {% cache unless craft.config.environmentVariables['env'] == "dev" %}
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
@@ -24,11 +25,13 @@
 	<link rel="stylesheet" href="/resources/css/style.css"/>
 	<script src="https://use.typekit.net/wuz8jhr.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+  {% endcache %}
 
 </head>
 
 <body class="{% block bodyClass %}home{% endblock %}">
 	<div id="container">
+    {% cache unless craft.config.environmentVariables['env'] == "dev" %}
 		<header id="site-header" class="top-nav-layer" data-height="0" data-0-top="hithg;" data-emit-events>
       <div class="wrap">
         <a href="#" class="hamburger mobile-only"><span>MENU</span></a>
@@ -57,7 +60,7 @@
   		<footer id="footer">
         <div class="grid grid-no-gutter">
     			<div class="footer-left col col-3-of-4 col-m-3-of-4 col-s-3-of-4">
-            <p>&copy; 2015 Janet Evans. All Rights Reserved.</p>   
+            <p>&copy; 2016 Janet Evans. All Rights Reserved.</p>   
           </div>
           <div class="footer-right col col-1-of-4 col-m-1-of-4 col-s-1-of-4">
             {% if siteInfo.facebook %}
@@ -70,6 +73,7 @@
           </div>
         </div>
   		</footer>
+      {% endcache %}
     </div>
 	</div>
 
