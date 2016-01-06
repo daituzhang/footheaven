@@ -9,15 +9,28 @@
  # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
  #}
 
+{% set metaTitle = siteInfo.metaTitle %}
+{% if entry.metaTitle %}
+{% set metaTitle = entry.metaTitle %}
+{% endif %}
+
+{% set metaDescription = siteInfo.metaDescription %}
+{% if entry.metaDescription %}
+{% set metaDescription = entry.metaDescription %}
+{% endif %}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   {% cache unless craft.config.environmentVariables['env'] == "dev" %}
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
 	{% block meta %}
+
+  <title>{{ metaTitle }}</title>
+  <meta name="description" value="{{ metaDescription }}"> 
+  <link rel="home" href="{{ siteUrl }}" />
 	{% endblock %}
 
 	
