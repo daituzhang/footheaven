@@ -22,8 +22,25 @@
 {% set pluginScripts = craft.formBuilder.pluginScripts(form) %}
 {% set blogs = craft.entries.section('instaBlog') %}
 
+{% set metaTitle = siteInfo.metaTitle %}
+{% if entry.metaTitle %}
+{% set metaTitle = entry.metaTitle %}
+{% endif %}
+
+{% set metaDescription = siteInfo.metaDescription %}
+{% if entry.metaDescription %}
+{% set metaDescription = entry.metaDescription %}
+{% endif %}
 
 {% extends "_layout" %}
+
+
+{% block meta %}
+
+<title>{{ metaTitle }}</title>
+<meta name="description" value="{{ metaDescription }}"> 
+<link rel="home" href="{{ siteUrl }}" />
+{% endblock %}
 
 {% block content %}
 <section id="example" class="green">
