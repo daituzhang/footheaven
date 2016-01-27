@@ -51,7 +51,7 @@ return array(
         'environmentVariables' => array(
             'env' => 'dev',
             'siteUrl'        => '/',
-            'fileSystemPath' => '/var/www/vhosts/stratospherecreative.com/subdomains/janet/public/',
+            'fileSystemPath' => '/var/www/vhosts/stratospherecreative.com/subdomains/janet/app/',
             'frontEndAssets' => '/src/',
             'siteName' => 'Finding God Everyday',
         )

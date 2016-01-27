@@ -8,7 +8,7 @@
       {% if craft.request.segment(3) == '' %}     
         <h1>Browse categories below:</h1>
         <hr>
-      </header><!-- /header -->
+      </header>
         <div class="grid">
           <div class="col col-3-of-4 col-m-3-of-4 blog-left">
             <ul>
@@ -21,7 +21,7 @@
       {% else %}
         <h1>{{ category.slug|title }}</h1>   
         <hr> 
-      </header><!-- /header -->
+      </header>
       <div class="grid">
         <div class="col col-3-of-4 col-m-3-of-4 blog-left">
         {% paginate craft.entries.section('instaBlog').relatedTo(category).limit(2) as entries %}  

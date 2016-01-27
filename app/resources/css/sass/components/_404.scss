@@ -1,10 +1,10 @@
 .not-found {
+  background: $white;
+  color: #333;
+  text-align: center;
   #site-header {
     background: $white;
   }
-  background: $white;
-  text-align: center;
-  color: #333;
   h1 {
     margin-bottom: rem(50);
   }
@@ -20,7 +20,7 @@
       margin-right: rem(20);
     }
   }
-  .btn-container{
+  .btn-container {
     margin: 0 auto;
   }
 }

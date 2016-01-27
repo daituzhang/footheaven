@@ -11,6 +11,7 @@ var	gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	cache = require('gulp-cache'),
 	imagemin = require('gulp-imagemin'),
+	pngquant = require('imagemin-pngquant'),
 	wiredep = require('wiredep').stream,
 	jeet = require('node-jeet-sass');
 
@@ -70,10 +71,11 @@ gulp.task('jshint', function () {
 
 gulp.task('images', ['move'], function () {
 	return gulp.src('./app/resources/images/**/*')
-	.pipe(cache(imagemin({
-		progressive: true,
-		interlaced: true
-	})))
+	.pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+  }))
 	.pipe(gulp.dest('./public/resources/images'));
 
 });

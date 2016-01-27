@@ -1,35 +1,35 @@
 {% extends craft.instaBlog.settings.layout|length ? craft.instaBlog.settings.layout : 'blog/_instablog-layout' %}
 {% set entries = craft.entries.section('instaBlog') %}
 {% set total = entries|length %}
-{% block content %}
 
-<section id="instablog" class="blog-index">
-  <div class="wrap">
-    <header>
-      <h1>{{ blog.blogHeader }}</h1>
-      <h3><i>{{ blog.blogDescription }}</i></h3>  
-    </header>
-    <hr>
-    {% if total %}
-    <div class="blog-list">
-      {% for blog in entries %}
-        <div class="article-container">
-          <article itemtype="http://schema.org/Article">
-            <header>
-              {% if blog.instaBlogImage|length %}
-                <a href="/{{ blog.uri }}" itemprop="name"><img src="{{ blog.instaBlogImage|first.url }}" alt="blog.instaBlogImage|first"></a>
-              {% endif %}
-              <h4><a href="/{{ blog.uri }}" itemprop="name">{{ blog.title }}</a></h4>
-            </header>
-            <div itemprop="articleBody">
-              <h5 itemprop="datePublished">{{ blog.postDate.format('F d, Y') }}</h5> 
-              <p>{{ blog.instaBlogBody|striptags|truncate(240) }}</p>
-            </div>
-          </article>
+{% block content %}
+  <section id="instablog" class="blog-index">
+    <div class="wrap">
+      <header>
+        <h1>{{ blog.blogHeader }}</h1>
+        <h3><i>{{ blog.blogDescription }}</i></h3>  
+      </header>
+      <hr>
+      {% if total %}
+      <div class="blog-list">
+        {% for blog in entries %}
+          <div class="article-container">
+            <article itemtype="http://schema.org/Article">
+              <header>
+                {% if blog.instaBlogImage|length %}
+                  <a href="/{{ blog.uri }}" itemprop="name"><img src="{{ blog.instaBlogImage|first.url }}" alt="blog.instaBlogImage|first"></a>
+                {% endif %}
+                <h4><a href="/{{ blog.uri }}" itemprop="name">{{ blog.title }}</a></h4>
+              </header>
+              <div itemprop="articleBody">
+                <h5 itemprop="datePublished">{{ blog.postDate.format('F d, Y') }}</h5> 
+                <p>{{ blog.instaBlogBody|striptags|truncate(240) }}</p>
+              </div>
+            </article>
+          </div>
+        {% endfor %}
         </div>
-      {% endfor %}
-      </div>
-    {% endif %}
-  </div>
-</section>
+      {% endif %}
+    </div>
+  </section>
 {% endblock %}
