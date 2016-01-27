@@ -1,41 +1,39 @@
 {% extends craft.instaBlog.settings.layout|length ? craft.instaBlog.settings.layout : 'blog/_instablog-layout' %}
 
 {% block content %}
-  <section id="instablog" class="type">
-    <div class="wrap">
-      <header>
-        <h4>Category</h4>
-
-        {% if craft.request.segment(3) == '' %}     
-          <h1>Browse categories below:</h1>
-          <hr>
-        </header><!-- /header -->
-          <div class="grid">
-            <div class="col col-3-of-4 col-m-3-of-4 blog-left">
-              <ul>
-                {% nav category in craft.categories.group('instaBlogCategories') %}
-                  <li>
-                    <a href="{{ category.url }}">{{ category.title }}</a>
-                  </li>
-                {% endnav %}
-              </ul>
-        {% else %}
-          <h1>{{ category.slug|title }}</h1>   
-          <hr> 
-        </header><!-- /header -->
+<section id="instablog" class="type">
+  <div class="wrap">
+    <header>
+      <h4>Category</h4>
+      {% if craft.request.segment(3) == '' %}     
+        <h1>Browse categories below:</h1>
+        <hr>
+      </header>
         <div class="grid">
           <div class="col col-3-of-4 col-m-3-of-4 blog-left">
-          {% paginate craft.entries.section('instaBlog').relatedTo(category).limit(2) as entries %}  
-            {% if entries|length %}
-              {% include 'blog/_entries.twig' %}
-            {% else %}
-              {% include 'blog/_not-found.twig' with {'type': 'category'} %}
-            {% endif %}
-        {% endif %}
-
-          </div>
-        {% include 'blog/_aside.twig' %}
+            <ul>
+              {% nav category in craft.categories.group('instaBlogCategories') %}
+                <li>
+                  <a href="{{ category.url }}">{{ category.title }}</a>
+                </li>
+              {% endnav %}
+            </ul>
+      {% else %}
+        <h1>{{ category.slug|title }}</h1>   
+        <hr> 
+      </header>
+      <div class="grid">
+        <div class="col col-3-of-4 col-m-3-of-4 blog-left">
+        {% paginate craft.entries.section('instaBlog').relatedTo(category).limit(2) as entries %}  
+          {% if entries|length %}
+            {% include 'blog/_entries.twig' %}
+          {% else %}
+            {% include 'blog/_not-found.twig' with {'type': 'category'} %}
+          {% endif %}
+      {% endif %}
         </div>
-    </div>
-  </section>
+      {% include 'blog/_aside.twig' %}
+      </div>
+  </div>
+</section>
 {% endblock %}
