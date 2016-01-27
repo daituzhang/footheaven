@@ -12,6 +12,14 @@
 {% set metaTitle = siteInfo.metaTitle %}
 {% set metaDescription = siteInfo.metaDescription %}
 
+{% set startYear = 2010 %}
+{% set currentYear = now.year %}
+
+{% if startYear == currentYear %}
+    {% set copyrightYears = startYear %}
+{% else %}
+    {% set copyrightYears = startYear ~ ' - ' ~ currentYear %}
+{% endif %}
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
@@ -19,7 +27,7 @@
   {% cache unless craft.config.environmentVariables['env'] == "dev" %}
   	<meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
   	<link rel="home" href="{{ siteUrl }}" />
   	{% block meta %}
       <title>{{ metaTitle }}</title>
@@ -70,7 +78,7 @@
     		<footer id="footer">
           <div class="grid grid-no-gutter">
       			<div class="footer-left col col-3-of-4 col-m-3-of-4 col-s-3-of-4">
-              <p>&copy; 2016 Janet Evans. All Rights Reserved.</p>   
+              <p>&copy; {{ copyrightYears }} Janet Evans. All Rights Reserved.</p>   
             </div>
             <div class="footer-right col col-1-of-4 col-m-1-of-4 col-s-1-of-4">
               {% if siteInfo.facebook %}
