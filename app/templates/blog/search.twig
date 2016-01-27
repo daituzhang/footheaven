@@ -7,25 +7,32 @@
 {% endif %}
 
 {% block content %}
-<section id="instablog" class="type">
-  <div class="wrap">
-    <header>
-      <h4>Search Results for</h4> 
-      <h1>&ldquo;{{ query | title }}&rdquo;</h1>
-      <hr>
-    </header>
-    <div class="grid">
-      <div class="col col-3-of-4 col-m-3-of-4 blog-left">
-      {% paginate craft.entries.search('*'~query~'*').section('instaBlog').limit(10).order('score') as entries %}
-        {% if entries|length %}
-          {% include 'blog/_entries.twig' %}
-        {% else %}
-          {% include 'blog/_not-found.twig' with {'type': 'search'} %}
-        {% endif %}
-      {% endpaginate %}
+  <section id="instablog" class="type">
+    <div class="wrap">
+      <header>
+        <h4>Search Results for</h4> 
+        <h1>&ldquo;{{ query | title }}&rdquo;</h1>
+        <hr>
+      </header>
+      
+      <div class="grid">
+        <div class="col col-3-of-4 col-m-3-of-4 blog-left">
+
+        {% paginate craft.entries.search('*'~query~'*').section('instaBlog').limit(10).order('score') as entries %}
+
+          {% if entries|length %}
+            {% include 'blog/_entries.twig' %}
+          {% else %}
+            {% include 'blog/_not-found.twig' with {'type': 'search'} %}
+          {% endif %}
+
+        {% endpaginate %}
+
+        </div>
+
+        {% include 'blog/_aside.twig' %}
+
       </div>
-      {% include 'blog/_aside.twig' %}
     </div>
-  </div>
-</section>
+  </section>
 {% endblock %}

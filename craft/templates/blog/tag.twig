@@ -4,37 +4,38 @@
 {% set instaTags = craft.tags.group('instaBlogTags') %}
 
 {% block content %}
-<section id="instablog" class="type">
-  <div class="wrap">
-    <header>
-      <h4>Tag</h4>
-      {% if craft.request.segment(3) == '' %}
-        <h1>Browse tags below:</h1>
-        <hr>
-      </header>
-      <div class="grid">
-        <div class="col col-3-of-4 col-m-3-of-4 blog-left">
-          <ul>
-          {% for tag in instaTags %}
-            <li><a href="/blog/tag/{{ tag.name|split(' ')|join('-')|lower }}">{{ tag.name }}</a>
-          {% endfor %}          
-          </ul>
-      {% else %}
-        <h1>{{ searchValue | title }}</h1> 
-        <hr>
-      </header>
-      <div class="grid">
-          <div class="col col-3-of-4 col-m-3-of-4 blog-left">
-          {% paginate craft.entries.search(tags).section('instaBlog').limit(10).order('dateCreated') as entries %}  
-            {% if entries|length %}
-              {% include 'blog/_entries.twig' %}
-            {% else %}
-              {% include 'blog/_not-found.twig' with {'type': 'tag'} %}
-            {% endif %}
-        {% endif %}
+  <section id="instablog" class="type">
+    <div class="wrap">
+      <header>
+        <h4>Tag</h4>
+
+        {% if craft.request.segment(3) == '' %}
+            <h1>Browse tags below:</h1>
+            <hr>
+          </header>
+          <div class="grid">
+            <div class="col col-3-of-4 col-m-3-of-4 blog-left">
+              <ul>
+              {% for tag in instaTags %}
+                <li><a href="/blog/tag/{{ tag.name|split(' ')|join('-')|lower }}">{{ tag.name }}</a>
+              {% endfor %}          
+              </ul>
+        {% else %}
+            <h1>{{ searchValue | title }}</h1> 
+            <hr>
+          </header>
+          <div class="grid">
+              <div class="col col-3-of-4 col-m-3-of-4 blog-left">
+              {% paginate craft.entries.search(tags).section('instaBlog').limit(10).order('dateCreated') as entries %}  
+                {% if entries|length %}
+                  {% include 'blog/_entries.twig' %}
+                {% else %}
+                  {% include 'blog/_not-found.twig' with {'type': 'tag'} %}
+                {% endif %}
+          {% endif %}
+        </div>
+        {% include 'blog/_aside.twig' %}
       </div>
-      {% include 'blog/_aside.twig' %}
     </div>
-  </div>
-</section>
+  </section>
 {% endblock %}
