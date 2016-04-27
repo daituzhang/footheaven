@@ -17,9 +17,78 @@
     display: block;
   }
 }
+.layer {
+  background-color:rgba($green,0.3);
+  @include overlap;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+#hero {
+  min-height: 400px;
+  text-align: center;
+  background: url(../images/footheaven-hero.jpg) no-repeat;
+  background-size: cover;
+  padding: 120px 0;
+  h2 {
+    font-size: 28px;
+    text-transform: capitalize;
+    line-height: 1.2;
+  }
+  h3 {
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+  }
+  .wrap {
+    z-index: 2;
+    max-width: 800px;
+  }
+  .btn {
+    margin: 20px auto 0;
+  }
+  @include tablet-mobile {
+    .layer {
+      background-color:rgba($green-light,0.7);
+    }
+  }
+}
+#about {
+    padding: 80px 0;
+    background-color: $green-light;
+    @include mobile-only {
+      ul {
+        margin-top: 20px;
+        margin-left: 7%;
+      }
+    }
+
+
+}
+#service {
+  color: $white;
+  padding: 120px 0;
+  background: url(../images/footheaven-about.jpg) no-repeat;
+  background-size: cover;
+  .wrap {
+    z-index: 2;
+  }
+
+}
+#contact {
+  padding: 80px 0;
+  background-color: #E0D68C;
+  h3 {
+    margin-bottom: 30px;
+  }
+  @include tablet-mobile {
+    h3 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+  }
+}
 #example {
   background-color: $white;
-  color: $gray-dark;
   font-size: rem(16);
   height: 100vh;
   left: 0;
@@ -29,7 +98,7 @@
   top: 0;
   width: 100%;
   z-index: 0;
-  @include transition(z-index 0s 1.5s ease,opacity 1s .8s ease);
+  @include transition(z-index 0s 1.5s ease,opacity .8s ease);
   @include mobile-only {
     .close-trigger {
       right: rem(10);
@@ -38,7 +107,6 @@
   }
   h2,
   h4 {
-    color: $gray-light;
     font-size: rem(14);
   }
   h3 {
@@ -54,8 +122,13 @@
     }
   }
   .wrap {
-    max-width: rem(800);
-    padding: rem(40) $padding-gap rem(180);
+    width: 80%;
+    max-width: 560px;
+    background-color: $green-light;
+    @include center;
+    border: 1px solid $green;
+    border-radius: 20px;
+    padding: 50px;
   }
   .close-trigger {
     color: $gray-light;
@@ -71,239 +144,7 @@
     opacity: 1;
     overflow-y: scroll;
     z-index: 11;
-    @include transition(z-index 0s ease,opacity 1s .8s ease);
-  }
-}
-#the-book {
-  overflow-x: hidden;
-  .wrap {
-    padding: rem(70) $padding-gap rem(180);
-  }
-  .mobile-book {
-    margin: 0 auto;
-    max-width: rem(250);
-  }
-  h1 {
-    color: #333;
-  }
-  h3 {
-    margin-bottom: rem(15);
-  }
-  @include tablet-only {
-    .btn + .btn {
-      margin-top: rem(20);
-    }
-    .btn-container {
-      padding-left: rem(40);
-    }
-    .mobile-book {
-      margin-left: 10%;
-    }
-  }
-  @include mobile-only {
-    text-align: center;
-    h1 {
-      font-size: rem(30);
-    }
-    h3 {
-      font-size: rem(24);
-    }
-    .wrap > .grid {
-      padding-top: rem(380);
-    }
-    .book-right {
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-    .btn-container {
-      padding-left: 0 !important;
-    }
-  }
-}
-#the-author {
-  background-color: $white;
-  color: $gray-dark;
-  font-size: rem(18);
-  .wrap {
-    padding: rem(96) $padding-gap;
-  }
-  img {
-    margin-top: rem(10);
-    padding-left: rem(60);
-  }
-  p {
-    margin-bottom: rem(40);
-  }
-  @include tablet-only {
-    .wrap {
-      padding: 3.33rem $padding-gap;
-    }
-  }
-  @include tablet-mobile {
-    img {
-      margin-top: rem(50);
-      padding-left: 0;
-    }
-  }
-  @include mobile-only {
-    text-align: center;
-    .wrap {
-      padding: 0 !important;
-    }
-    .author-left {
-      padding: rem(50) $padding-mobile-gap rem(20);
-    }
-  }
-}
-#events {
-  color: $green-dark;
-  font-size: rem(14);
-  h3 {
-    font-size: rem(18);
-    font-weight: 700;
-    margin-bottom: 0;
-    text-transform: uppercase;
-  }
-  h5 {
-    font-size: rem(18);
-  }
-  .wrap {
-    padding: rem(65) $padding-gap;
-  }
-  .events-container {
-    overflow: hidden;
-  }
-  .events-row {
-    opacity: 0;
-    width: 100%;
-    a {
-      @include hoverLine;
-    }
-    &:not(:first-of-type) {
-      @include overlap();
-    }
-    &.active {
-      opacity: 1;
-      z-index: 2;
-      @include transition(transform .5s ease);
-      @include transform(translate3d(0,0,0));
-    }
-    &.from-right:not(.active),
-    &.to-right {
-      @include transform(translate3d(100%,0,0));
-    }
-    &.from-left:not(.active),
-    &.to-left {
-      @include transform(translate3d(-100%,0,0));
-    }
-    @include tablet-only {
-      .event-date {
-        display: none;
-      }
-    }
-    @include mobile-only {
-      .event:first-child {
-        margin-bottom: rem(50);
-      }
-      .event-date {
-        display: block !important;
-      }
-    }
-  }
-  [class^='arrow'] {
-    color: $green-medium;
-    font-size: rem(28);
-    @include transition(all .5s ease);
-    &:hover {
-      color: $green-dark;
-    }
-    &.hidden {
-      color: rgba($green-medium, 0.4);
-      pointer-events: none;
-    }
-  }
-  .arrow-left {
-    margin-left: rem(20);
-  }
-  .arrow-right {
-    margin-left: rem(15);
-  }
-  .event-date {
-    border-right: solid 2px $yellow-dark;
-    color: $green-dark;
-    font-size: rem(13);
-    font-weight: 500;
-    max-width: rem(80);
-    padding: rem(10) 0;
-    text-align: center;
-    width: 100%;
-  }
-  .event-day {
-    font-size: rem(30);
-    letter-spacing: 3px;
-    line-height: 1.2em;
-    text-align: center;
-    @include mobile-only {
-      font-size: rem(20);
-    }
-  }
-}
-#banner {
-  background-color: $white;
-  color: $gray-dark;
-  font-size: rem(15);
-  .banner-left {
-    padding-bottom: rem(64);
-    padding-top: rem(55);
-  }
-  .banner-center {
-    padding-bottom: rem(95);
-    padding-top: rem(95);
-  }
-  .banner-right {
-    padding-top: rem(105);
-  }
-  @include tablet-only {
-    .banner-center {
-      padding-bottom: rem(50);
-      padding-top: rem(60);
-    }
-    .banner-right {
-      padding-bottom: rem(60);
-      padding-top: 0;
-    }
-  }
-}
-#connect {
-  color: $white;
-  font-size: rem(14);
-  .wrap {
-    padding: rem(95) $padding-gap;
-  }
-  .form-container {
-    margin: 0 auto;
-    width: 50%;
-  }
-  @include tablet-mobile {
-    .form-container {
-      width: 100%;
-    }
-  }
-}
-#share {
-  .wrap {
-    padding: rem(38) $padding-gap;
-  }
-  h2 {
-    font-size: rem(14);
-    line-height: 1;
-    margin-bottom: 0;
-    text-align: center;
-  }
-  [class^='icon-'] {
-    margin-right: rem(5);
+    @include transition(z-index 0s ease,opacity .8s ease);
   }
 }
 

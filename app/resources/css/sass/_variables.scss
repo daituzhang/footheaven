@@ -9,14 +9,15 @@ $gray-lighter: #eaeaea;
 $gray-light: #cccccc;
 $gray-dark: #777777;
 $blue: #3fa2e0;
-$green : #c8e8c7; 
-$green-dark: #1a4f44;
+$green : #5d8907; 
+$green-light: #d0e08c;
+$green-dark: #1a2a05;
 $green-medium: #499e8d;
 $red: #ff0000;
 
 
-$btn-green: darken($green-medium,5%);
-$btn-green-hover: $green-medium;
+$btn-green: darken($green-dark,5%);
+$btn-green-hover: $green-dark;
 
 $font-green: $green-dark;
 $font-green-light: rgba($font-green,0.6);

@@ -4,11 +4,11 @@ return array(
     '*' => array(
         'tablePrefix' => 'craft',
     ),
-    'dev' => array(
+    'localhost' => array(
         'server' => 'localhost',
         'user' => 'root',
         'password' => '',
-        'database' => 'janet',
+        'database' => 'footheaven',
     ),
     // Treat *.vagrantshare.com the same as localhost
     'vagrantshare' => array(

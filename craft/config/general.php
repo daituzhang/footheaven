@@ -7,22 +7,13 @@ return array(
         'siteFullUrl' => 'http://findinggodeveryday.com'
     ),
 
-    'dev' => array(
-        'devMode' => true,
-        'environmentVariables' => array(
-            'env' => 'dev',
-            'fileSystemPath' => '/vagrant/app/',
-            'frontEndAssets' => '/src/',
-            'siteName' => 'Finding God Everyday',
-        )
-    ),
     'localhost' => array(
         'devMode' => true,
         'environmentVariables' => array(
             'env' => 'dev',
             'fileSystemPath' => '/vagrant/app/',
             'frontEndAssets' => '/src/',
-            'siteName' => 'Finding God Everyday',
+            'siteName' => 'Foot Heaven',
         )
     ),
 

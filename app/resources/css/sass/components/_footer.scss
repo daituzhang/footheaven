@@ -3,26 +3,16 @@ footer {
   overflow: hidden;
   padding: 0;
   width: 100%;
+  padding: rem(15) rem(20);
   .col.footer-left {
     color: $gray-dark;
     font-size: rem(12);
-    padding: rem(15) rem(20);
     text-align: left;
   }
   .col.footer-right {
     text-align: right;
     [class^='icon-'] {
-      color: white;
-      display: inline-block;
       font-size: rem(14);
-      padding: rem(13);
-    }
-    .icon-facebook {
-      background: $blue-facebook;
-      margin-right: rem(-5);
-    }
-    .icon-twitter {
-      background: $blue-twitter;
     }
   }
   @include mobile-only {

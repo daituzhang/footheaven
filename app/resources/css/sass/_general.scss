@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: 'proxima-nova',sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: $px-base;
   font-weight: 300;
   line-height: 1.8;
@@ -12,6 +12,7 @@ body {
 
 * {
   @include box-sizing(border-box);
+  position: relative;
 }
 
 
@@ -39,6 +40,11 @@ h2 {
   line-height: rem(20);
   margin-bottom: rem(26);
   text-transform: uppercase;
+}
+
+ul {
+  list-style-type: disc;
+  vertical-align: top;
 }
 h3 {
   font-size: rem(24);
@@ -92,7 +98,6 @@ b {
 }
 
 main {
-  margin-top: rem(85);
   min-height: calc(100vh - 85px - 50px);
   @include transition(all .3s ease);
 }

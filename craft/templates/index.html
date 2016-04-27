@@ -17,10 +17,9 @@
  # http://buildwithcraft.com/docs/routing
  #}
     
-{% set form = craft.formBuilder.getFormByHandle('connect') %}
+{# {% set form = craft.formBuilder.getFormByHandle('connect') %}
 {% set tabs = form.fieldLayout.getFieldLayout().getTabs() %}
-{% set pluginScripts = craft.formBuilder.pluginScripts(form) %}
-{% set blogs = craft.entries.section('instaBlog') %}
+{% set pluginScripts = craft.formBuilder.pluginScripts(form) %} #}
 
 {% set metaTitle = siteInfo.metaTitle %}
 {% if entry.metaTitle %}
@@ -42,217 +41,44 @@
 {% endblock %}
 
 {% block content %}
-  <section id="example" class="green">
+
+  <section id="hero" class="green">
     <div class="wrap">
-      <h2>{{entry.sampleHeader}}</h2>
-      {{entry.sampleCopy}}
+      <h1>{{entry.heroHeader}}</h1>
+      <h2>{{entry.heroPrice}}</h2>
+      <p><a href="">{{entry.heroLink}}</a></p>
+      {{entry.heroBody}}
     </div>
-    <a href="" class="close-trigger icon-close">close</a>
   </section>
 
-  <section id="the-book" class="green">
+  <section id="about">
     <div class="wrap">
+      <h2>{{entry.aboutHeader}}</h2>
       <div class="grid">
-       <div class="book-left col col-7-of-12 col-m-1-of-2"> 
-          {{entry.bookCopy}}
-          <div class="btn-container desktop-mobile-only">
-            <div class="grid">
-              <div class="col col-1-of-2">
-
-                {% if entry.bookCta %}
-                  <a href="" class="btn mobile-top">{{ entry.bookCta }}</a>
-                {% endif %}
-
-              </div>
-              <div class="col col-1-of-2">
-
-                {% if entry.sampleCta %}
-                  <a href="" class="btn open-trigger">{{ entry.sampleCta }}</a>
-                {% endif %}
-
-              </div>
-            </div>
-          </div>
+        <div class="col col-1-of-2"> 
+          {{entry.aboutBodyLeft}}
         </div>
-          <div class="book-right col col-5-of-12 col-m-1-of-2">
-            <div class="book-open desktop-only">
-              <div>
-                <figure class="book">
-                <!-- Front -->
-                  <ul class='hardcover_front'>
-                    <li>
-
-                      {% if entry.bookImage|length %}
-                        <img src="{{entry.bookImage|first.url}}" alt="{entry.bookImage|first}}" width="100%" height="100%">
-                      {% endif %}
-
-                    </li>
-                    <li></li>
-                  </ul>
-                <!-- Pages -->
-                  <ul class='page'>
-                    <li data-front="{{ entry.sampleCopy|striptags|truncate(240)|replace("&mdash;","-") }}" data-back="{{ entry.sampleCopy|striptags|truncate(240)|replace("&mdash;","-") }}">
-                    </li>
-                    <li>
-                      <a class="btn open-trigger" href="#">Read Example</a>
-                    </li>
-                    <li data-front="{{ entry.sampleCopy|striptags|truncate(240)|replace("&mdash;","-") }}" data-back="{{ entry.sampleCopy|striptags|truncate(240)|replace("&mdash;","-") }}">
-                    </li>
-                    <li data-front="{{ entry.sampleCopy|striptags|truncate(240)|replace("&mdash;","-") }}" data-back="{{ entry.sampleCopy|striptags|truncate(240)|replace("&mdash;","-") }}">
-                    </li>
-                    <li data-front="{{ entry.sampleCopy|striptags|truncate(240)|replace("&mdash;","-") }}" data-back="{{ entry.sampleCopy|striptags|truncate(240)|replace("&mdash;","-") }}">
-                    </li>
-                  </ul>
-                <!-- Back -->
-                  <ul class='hardcover_back'>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                  <ul class='book_spine'>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </figure>
-              </div>
-            </div>
-
-            {% if entry.bookMobileImage|length %}
-              <img src="{{ entry.bookMobileImage|first.url }}" alt="{{ entry.bookMobileImage|first }}" class="tablet-mobile-only mobile-book
-              " width="100%" height="100%">
-            {% endif %}
-
-            <div class="btn-container tablet-only">
-
-              {% if entry.bookCta %}
-                <a href="" class="btn mobile-top">{{ entry.bookCta }}</a>
-              {% endif %}
-
-              {% if entry.sampleCta %}
-                <a href="" class="btn open-trigger">{{ entry.sampleCta }}</a>
-              {% endif %}
-
-            </div>
-          </div>
+        <div class="col col-1-of-2"> 
+          {{entry.aboutBodyRight}}
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="the-author">
+  <section id="service" class="yellow">
     <div class="wrap">
+      <h2>{{entry.serviceHeader}}</h2>
       <div class="grid">
-        <div class="col col-7-of-12"> 
-          <div class="author-left">
-            {{entry.authorCopy}}
-            <div class="grid">
-              <div class="col col-1-of-2 col-m-1-or-2">
-
-                {% if entry.blogCta %}
-                  <a href="/{{blogs.first.uri}}" class="btn mobile-top">{{ entry.blogCta }}</a>
-                {% endif %}
-
-              </div>
-              <div class="col col-1-of-2 col-m-1-or-2">
-
-                {% if entry.facebookCta and siteInfo.facebook %}
-                  <a href="{{siteInfo.facebook}}" target="_blank" class="btn">{{ entry.facebookCta }}</a>
-                {% endif %}
-
-              </div>
-            </div>
-          </div>
+        <div class="col col-1-of-2"> 
+          {{entry.serviceBody}}
         </div>
-
-        {% if entry.authorImage|length %}
-          <div class="author-right col col-5-of-12">
-            <img src="{{entry.authorImage|first.url}}" alt="entry.authorImage|first">
-          </div>
-        {% endif %}
-
-      </div>
-    </div>
-  </section>
-
-  <section id="events" class="yellow">
-    <div class="wrap">
-    <h2>{{ entry.eventsHeader }}<span><a href="#" class="arrow-left icon-arrow-left hidden"></a><a href="#" class="arrow-right icon-arrow-right"></a></span></h2>
-      <div class="events-container">
-
-      {% set events = craft.entries.section('events').find() %}
-
-      {% if events|length %}
-        {% for event in events %}
-
-          {% if loop.index is odd %}
-            <div class="events-row{{ loop.first ? ' active' : '' }}">
-              <div class="grid">
-          {% endif %}
-              <div class="col col-1-of-2 col-m-1-of-2 event">
-                <div class="event">
-                  <div class="grid">
-                    <div class="col col-1-of-5 col-s-1-of-4">
-                      <div class="event-date">
-                        <p class="event-month">{{ event.date|date('F') }}</p>
-                        <p class="event-day">{{ event.date|date('j')}}</p>
-                      </div>
-                    </div>
-                    <div class="col col-4-of-5 col-s-3-of-4">
-                      <h3>{{ event.title }}</h3>
-                      <h5>{{ event.date|date("F j") }} <b>&middot;</b> {{event.date.localeTime()}} CST</h5>
-                      {{ event.body }}
-                      <p><a href="http://maps.google.com/?q={{ event.address }}">{{ event.address }}</a></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-          {% if loop.index is even or loop.last %}
-              </div>
-            </div>
-          {% endif %} 
-
-        {% endfor %}
-      {% endif %}
-
-      </div>
-    </div>
-  </section>
-
-  <section id="banner" class="desktop-tablet-only">
-    <div class="wrap">
-      <div class="grid grid-no-gutter">
-
-        {% if entry.bookImage|length %}
-          <div class="col col-1-of-4 col-m-1-of-3">
-            <div class="banner-left">
-              <img src="{{entry.bannerImage|first.url}}" alt="entry.bannerImage|first">
-            </div>
-          </div>
-        {% endif %}
-
-        <div class="col col-3-of-4 col-m-2-of-3 grid">
-
-          {% if entry.bannerCopy %}
-            <div class="col col-2-of-3 banner-center">
-              {{entry.bannerCopy}}
-            </div>
-          {% endif %}
-
-          {% if entry.bannerCta %}
-            <div class="col col-1-of-3 banner-right">
-              <a href="" class="btn">{{entry.bannerCta}}</a>
-            </div>
-          {% endif %}
-
+        <div class="col col-1-of-2"> 
         </div>
       </div>
     </div>
   </section>
 
-  {% if entry.formImage|length %}
-    <section id="connect" class="orange" style="background:url({{entry.formImage|first.url}}) no-repeat; background-size: cover; background-position: 50% 50%">
-  {% else %}
-    <section id="connect" class="orange">
-  {% endif %}
+{#  <section id="contact" class="orange">
 
     <div class="wrap">
       <div class="form-container">
@@ -305,15 +131,5 @@
         </form>
       </div>
     </div>
-  </section>
-
-  <section id="share" class="green">
-    <div class="wrap">
-      <h2>Share This Page
-      <span><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ craft.config.siteFullUrl }}" class="icon-facebook"></a></span>
-      <span><a target="_blank" href="https://twitter.com/home?status={{ craft.config.siteFullUrl }}" class="icon-twitter"></a></span>
-      <span class="desktop-tablet-only"><a target="_blank" href="https://plus.google.com/share?url={{ craft.config.siteFullUrl }}" class="icon-gplus"></a></span>
-      <span><a href="mailto:sdf?'&amp;cc=safd'&amp;bcc=asdf'&amp;subject=sdf'&amp;body={{ craft.config.siteFullUrl }}" class="icon-mail"></a></span></h2>
-    </div>
-  </section>
+  </section> #}
 {% endblock %}
