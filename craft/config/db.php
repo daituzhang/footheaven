@@ -10,6 +10,12 @@ return array(
         'password' => '',
         'database' => 'footheaven',
     ),
+    '198.12.149.81' => array(
+        'server' => 'localhost',
+        'user' => 'root',
+        'password' => 'footheaven1976',
+        'database' => 'footheaven',
+    ),
     // Treat *.vagrantshare.com the same as localhost
     'vagrantshare' => array(
         'server' => 'localhost',

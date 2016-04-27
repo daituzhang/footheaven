@@ -17,13 +17,13 @@ return array(
         )
     ),
 
-    '10.0.1.87' => array(
+    '198.12.149.81' => array(
         'devMode' => true,
         'environmentVariables' => array(
             'env' => 'dev',
-            'fileSystemPath' => '/vagrant/app/',
+            'fileSystemPath' => '/var/www/app',
             'frontEndAssets' => '/src/',
-            'siteName' => 'Finding God Everyday',
+            'siteName' => 'Foot Heaven',
         )
     ),
 
