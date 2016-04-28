@@ -12,7 +12,7 @@ return array(
     ),
     '198.12.149.81' => array(
         'server' => 'localhost',
-        'user' => 'root',
+        'user' => 'footheaven',
         'password' => 'footheaven1976',
         'database' => 'footheaven',
     ),
