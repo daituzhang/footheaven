@@ -1,0 +1,14 @@
+{% extends "_layouts/elementindex" %}
+{% includeCssResource "formbuilder/css/formbuilder.css" %}
+
+{% set title = "Form Entries" %}
+{% set selectedTab = 'entries' %}
+{% set elementType = "FormBuilder" %}
+
+{% set extraPageHeaderHtml %}
+  {% include 'formbuilder/_includes/header.html' %}
+{% endset %}
+
+{% block sidebar %}
+  {{ parent() }}
+{% endblock %}

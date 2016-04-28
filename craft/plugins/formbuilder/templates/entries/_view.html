@@ -1,0 +1,61 @@
+{% extends "_layouts/cp" %}
+{% includeCssResource "formbuilder/css/formbuilder.css" %}
+
+{% set title = "Form Submission Details" %}
+{% set selectedTab = '' %}
+
+{% set extraPageHeaderHtml %}
+  {% include 'formbuilder/_includes/header.html' %}
+{% endset %}
+
+{% set content %}
+
+  <div id="entryDetails">
+  <header>
+    <h1>{{ form.name }}</h1>
+    <h2>Form ID: <span>{{ entry.id }}</span></h2>
+    <h2>Submitted: <span>{{ entry.dateCreated | date('F jS, Y') }} at {{ entry.dateCreated | date('g:h A') }}</span></h2>
+  </header>
+
+  <hr>
+
+  <table class="data fullwidth collapsible">
+
+    {% for name, value in data %}
+      {% set field = craft.fields.getFieldByHandle(name) %}
+      {% if value %}
+
+      <tr>
+        
+        <td><strong>{{ field.name }}</strong></td>
+
+        {% if value | checkArray == '1' %}
+          <td>
+          {% for key, item in value %}
+            <span class="item">{{ item }}</span>
+          {% endfor %}
+          </td>
+        {% else %}
+          <td>{{ value|nl2br }}</td>
+        {% endif %}
+
+      </tr>
+
+      {% endif %}
+
+    {% endfor %}
+
+  </table>
+  
+  </div>
+
+  <hr>
+
+  <form method="post" accept-charset="utf-8">
+    <input type="hidden" name="action" value="formBuilder/entries/deleteEntry">
+    <input type="hidden" name="redirect" value="formbuilder/entries">
+    <input type="hidden" name="entryId" value="{{ entry.id }}">
+    <button class="btn delete submit">Delete Entry</button>
+  </form>
+
+{% endset %}
