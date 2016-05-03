@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'janetevans';
-  src: url('../fonts/janetevans.eot?44329792');
-  src: url('../fonts/janetevans.eot?44329792#iefix') format('embedded-opentype'),
-       url('../fonts/janetevans.woff?44329792') format('woff'),
-       url('../fonts/janetevans.ttf?44329792') format('truetype'),
-       url('../fonts/janetevans.svg?44329792#janetevans') format('svg');
+  font-family: 'footheaven';
+  src: url('../fonts/footheaven.eot?44329792');
+  src: url('../fonts/footheaven.eot?44329792#iefix') format('embedded-opentype'),
+       url('../fonts/footheaven.woff?44329792') format('woff'),
+       url('../fonts/footheaven.ttf?44329792') format('truetype'),
+       url('../fonts/footheaven.svg?44329792#footheaven') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,7 +13,7 @@
  [class^="icon-"]:before, 
  [class*=" icon-"]:before,
  .icon-close:after {
-  font-family: "janetevans";
+  font-family: "footheaven";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -36,14 +36,6 @@
  
 }
  
-.icon-facebook:before { content: '\e800'; } 
-.icon-gplus:before { content: '\e801'; }
-.icon-left-open-big:before { content: '\e802'; }
-.icon-right-open-big:before { content: '\e803'; }
-.icon-menu:before { content: '\e804'; }
-.icon-twitter:before { content: '\e805'; }
-.icon-mail:before { content: '\e806'; }
-.icon-search:before { content: '\e807'; }
-.icon-arrow-left:before { content: '\e808'; }
-.icon-arrow-right:before { content: '\e809'; }
-.icon-close:after { content: '\e80a'; }
+.icon-facebook:before { content: '\e800'; } /* '' */
+.icon-yelp:before { content: '\e802'; } /* '' */
+.icon-cancel:before { content: '\e804'; } /* '' */

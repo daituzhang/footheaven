@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2016 by original authors @ fontello.com</metadata>
+<defs>
+<font id="footheaven" horiz-adv-x="1000" >
+<font-face font-family="footheaven" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="facebook" unicode="&#xe800;" d="M500 644l-142 0q-14 0-25-15t-11-37l0-102 178 0 0-148-178 0 0-442-170 0 0 442-152 0 0 148 152 0 0 86q0 94 59 159t147 65l142 0 0-156z" horiz-adv-x="500" />
+
+<glyph glyph-name="yelp" unicode="&#xe802;" d="M431 114v-71q0-163-3-170-7-18-28-22-31-6-102 21t-90 49q-8 9-10 20 0 7 2 15 3 6 19 26t101 121q1 0 34 39 8 10 22 14t27-2q14-6 21-17t7-23z m-83 140q-1-31-29-39l-67-22q-153-49-163-49-19 1-30 20-6 14-9 42-5 42 0 93t17 69 31 18q8 0 113-43 39-16 64-26l47-19q13-5 20-17t6-27z m461-166q-4-30-51-90t-76-70q-20-8-35 3-7 6-102 161l-27 43q-7 11-6 25t11 26q19 24 46 14 1 0 67-22 113-37 135-44t26-12q15-12 12-34z m-375 353q3-57-30-68-32-10-64 40l-210 333q-5 20 10 35 23 24 116 50t125 17q22-5 28-25 1-10 12-170t13-212z m370-60q1-22-15-33-8-6-184-48-37-9-50-13l0 1q-13-3-25 2t-21 18q-17 26 0 49 1 0 42 57 70 95 83 113t19 22q16 11 37 1 27-12 68-74t46-94v-1z" horiz-adv-x="857.1" />
+
+<glyph glyph-name="cancel" unicode="&#xe804;" d="M724 112q0-22-15-38l-76-76q-16-15-38-15t-38 15l-164 165-164-165q-16-15-38-15t-38 15l-76 76q-16 16-16 38t16 38l164 164-164 164q-16 16-16 38t16 38l76 76q16 16 38 16t38-16l164-164 164 164q16 16 38 16t38-16l76-76q15-15 15-38t-15-38l-164-164 164-164q15-15 15-38z" horiz-adv-x="785.7" />
+</font>
+</defs>
+</svg>
